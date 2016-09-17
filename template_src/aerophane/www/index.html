@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+Customize this policy to fit your own app's needs. For more guidance, see:
+https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+Some notes:
+* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+* Enable inline JS: add 'unsafe-inline' to default-src
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet" type="text/css" href="inc/main.css">
+<title>Aerophane</title>
+
+<body>
+
+<header>
+<button><div></div><div></div><div></div></button>
+<h1>Aerophane</h1>
+</header>
+
+<article>
+<section>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula neque, porta vitae eros ut, tincidunt sollicitudin nisi. Vestibulum varius dictum vehicula. Fusce efficitur mi at sollicitudin molestie. Sed eleifend convallis nisl at porta. Suspendisse nec libero semper, pharetra urna volutpat, rhoncus justo. In ut felis rutrum enim fermentum mattis. Nullam quis eleifend leo. Quisque nec varius libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed eu felis at neque pulvinar sollicitudin. Pellentesque aliquam hendrerit magna in blandit. Curabitur vulputate turpis augue, ac rhoncus lectus tempor sit amet. Donec fermentum arcu a iaculis suscipit. Integer quis nisi vel leo tristique interdum.
+</section>
+</article>
+
+<footer>
+<button id="footer_back">‹</button>
+</footer>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="inc/main.js"></script>

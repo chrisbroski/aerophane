@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {padding: 8px 8px 240px; font-family: droid sans, sans-serif; }
+
+body {
+    margin: 0;
+    max-width: 580px;
+    /* From Cordova default template */
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+}
+
+button {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+button:focus {outline: 0 none; }
+
+article {
+    margin-top: 60px;
+}
+article > *:first-child {margin-top: 0; }
+article p {
+    margin: 12px 16px;
+    line-height: 1.4em;
+    font-size: 15px;
+}
+article li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
+
+header {
+    position: fixed;
+    overflow: auto;
+    left: 0; top: 0; right: 0;
+    background: #00d;
+    height: 56px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+    color: #fff;
+}
+header h1 {
+    margin: 0; padding: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 56px;
+    white-space: nowrap;
+}
+header button, footer button {
+    margin: 0 12px 0 0; padding: 12px;
+    width: 56px; height: 56px;
+    float: left;
+    background: transparent;
+    border: 0 none;
+    color: #fff;
+}
+
+header button div {
+    margin: 3px 4px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+section {
+    border-radius: 2px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
+    overflow: auto;
+}
+
+nav {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    overflow: hidden;
+    width: 0;
+    background: #fff;
+    transition: width 0.2s;
+}
+
+nav h2 {
+    margin: 32px 0 16px 16px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #00d;
+}
+nav p {
+    margin: 0;
+    font-size: 14px;
+}
+nav p a {
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+nav p a:hover {
+    background: #eee;
+}
+
+footer {
+    position: fixed;
+    overflow: auto;
+    left: 0; bottom: 0; right: 0;
+    background: #00d;
+    height: 56px;
+}
+footer button:first-child {
+    font-size: 24px;
+}
+
+#matte {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: none;
+}
