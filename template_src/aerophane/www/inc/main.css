@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {padding: 8px 8px 240px; font-family: droid sans, sans-serif; }
@@ -17,8 +17,18 @@ body {
 button {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
-    text-transform: uppercase;
 }
+
+article button {
+    text-transform: uppercase;
+    margin: 8px; padding: 12px;
+    background: transparent;
+    border: 0 none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+}
+
 button:focus {outline: 0 none; }
 
 article {
@@ -68,6 +78,21 @@ article > section {
     border-radius: 2px;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
     overflow: auto;
+}
+article > section > header {
+    background: #00d;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+article > section > header h2 {
+    margin: 0; padding: 64px 16px 16px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 22px;
+}
+article > section > footer {
+    padding: 8px;
+    text-align: right;
 }
 
 body > nav {

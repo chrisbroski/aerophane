@@ -53,23 +53,12 @@ function Utilities() {
             document.getElementById("matte").style.display = "none";
         });
 
-        touchclick(document.querySelector("header button:first-child"), function () {
+        touchclick(document.querySelector("body > header button:first-child"), function () {
             document.querySelector("nav").style.width = "240px";
             document.getElementById("matte").style.display = "block";
         });
     }
     this.buildNav = buildNav;
-
-    /*this.scriptifyLinks = function scriptifyLinks() {
-        var allLinks = document.querySelector("a");
-        [].forEach.call(allLinks, function (el) {
-            touchclick(el, function (e) {
-                var
-                e.preventDefault();
-                location = this.getEventTarget
-            });
-        });
-    };*/
 }
 
 (function init() {
@@ -77,23 +66,14 @@ function Utilities() {
 
     aero = new Utilities();
 
-    /*function onDeviceReady() {
-        // After this event, it is safe to call any Cordova plugin
-    }*/
-
-    aero.touchclick(document.getElementById("footer_back"), function () {
+    /*aero.touchclick(document.getElementById("footer_back"), function () {
         window.history.back();
-    });
+    });*/
 
     aero.buildNav([
-        {"name": "Home", "href": "index.html"},
-        //{"name": "Add From Camera", "href": "camera.html"},
-        {"name": "List", "href": "list.html"},
-        {"name": "Form", "href": "form.html"}
+        {"name": "Home", "href": "/index.html"},
+        {"name": "List", "href": "/list/list.html"},
+        {"name": "Form", "href": "/form/form.html"}
     ]);
-
-    // document.addEventListener("deviceready", onDeviceReady);
-
-    // Make links use JavaScript to keep iOS web apps from breaking out of the app window
 
 }());
