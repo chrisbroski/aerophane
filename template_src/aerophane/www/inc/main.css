@@ -10,7 +10,6 @@ html {
 
 body {
     margin: 0; padding-top: 56px;
-    max-width: 580px;
     /* From Cordova default template */
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
@@ -38,6 +37,7 @@ button:focus {outline: 0 none; }
 article {
     margin: 8px 8px 0;
     overflow: visible;
+    max-width: 580px;
 }
 article > *:first-child {margin-top: 0; }
 article p {
@@ -90,19 +90,30 @@ article > section > header {
     border-top-right-radius: 2px;
 }
 article > section > header h2 {
-    margin: 0; padding: 64px 16px 16px;
+    margin: 0; padding: 128px 16px 16px;
     color: #fff;
     font-weight: normal;
     font-size: 20px;
 }
+article > section > header h3 {
+    margin: 0; padding: 64px 16px 16px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 18px;
+}
+article > section > header h4 {
+    margin: 0; padding: 16px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+}
 article > section > footer {
     padding: 4px;
     border-top: 1px solid #ddd;
-    text-align: right;
 }
 
 article > footer {
-    margin: 8px -8px 0; padding: 8px 8px 56px;
+    margin: 8px -8px 0; padding: 8px 8px 112px;
     background: #666;
     color: #fff
 }
@@ -142,6 +153,7 @@ body > footer {
     left: 0; bottom: 0; right: 0;
     background: #00d;
     height: 56px;
+    color: #fff;
 }
 body > footer button:first-child {
     font-size: 24px;
@@ -154,11 +166,21 @@ body > footer button:first-child {
     display: none;
 }
 
+@media (min-width: 580px) {
+    html {
+        background: #fff;
+    }
+}
+
 @media (min-width: 800px) {
     body {
         padding-left: 240px;
     }
     body > header {
+        padding-left: 16px;
+        left: 240px;
+    }
+    body > footer {
         padding-left: 16px;
         left: 240px;
     }
