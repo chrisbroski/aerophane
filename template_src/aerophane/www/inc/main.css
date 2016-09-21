@@ -5,16 +5,18 @@
 
 html {
     font-family: droid sans, sans-serif;
-    background: #666;
+    background: #f5f5f5;
+    height: 100%;
 }
 
 body {
     margin: 0; padding-top: 56px;
+    height: 100%;
     /* From Cordova default template */
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
-    background: #fff;
+    background: #f5f5f5;
 }
 
 button {
@@ -51,10 +53,10 @@ body > header {
     position: fixed;
     overflow: auto;
     left: 0; top: 0; right: 0;
-    background: #00d;
+    background: #f5f5f5;
     height: 56px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
-    color: #fff;
+    color: #888;
 }
 body > header h1 {
     margin: 0; padding: 0;
@@ -62,6 +64,9 @@ body > header h1 {
     font-weight: normal;
     line-height: 56px;
     white-space: nowrap;
+}
+body > header button:first-child {
+    color: transparent;
 }
 body > header button, body > footer button {
     margin: 0 12px 0 0; padding: 12px;
@@ -75,7 +80,7 @@ body > header button, body > footer button {
 body > header button div {
     margin: 3px 4px;
     height: 2px;
-    background: #fff;
+    background: #888;
     border-radius: 2px;
 }
 
@@ -83,6 +88,7 @@ article > section {
     border-radius: 2px;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
     overflow: auto;
+    background: #fff;
 }
 article > section > header {
     background: #00d;

@@ -26,7 +26,10 @@ function Utilities() {
     this.touchclick = touchclick;
 
     function buildNav(navItems) {
-        var navMatte, navNav, navH2, navP, navA;
+        var navButton, navMatte, navNav, navH2, navP, navA;
+
+        navButton = document.querySelector('body > header button:first-child');
+        navButton.innerHTML = '<div></div><div></div><div></div>';
 
         navMatte = document.createElement("div");
         navMatte.id = "matte";
