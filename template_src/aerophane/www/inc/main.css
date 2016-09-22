@@ -6,17 +6,20 @@
 html {
     font-family: droid sans, sans-serif;
     background: #f5f5f5;
-    height: 100%;
+    color: #555;
 }
 
 body {
     margin: 0; padding-top: 56px;
-    height: 100%;
     /* From Cordova default template */
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
     background: #f5f5f5;
+}
+body.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 
 button {
@@ -24,10 +27,10 @@ button {
     -webkit-border-radius: 0;
 }
 
-article button {
+article button, body > footer button {
     text-transform: uppercase;
     margin: 8px; padding: 12px;
-    background: transparent;
+    background: #fff;
     border: 0 none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     font-size: 16px;
@@ -37,7 +40,7 @@ article button {
 button:focus {outline: 0 none; }
 
 article {
-    margin: 8px 8px 0;
+    margin: 8px 8px 64px;
     overflow: visible;
     max-width: 580px;
 }
@@ -56,7 +59,6 @@ body > header {
     background: #f5f5f5;
     height: 56px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
-    color: #888;
 }
 body > header h1 {
     margin: 0; padding: 0;
@@ -68,7 +70,7 @@ body > header h1 {
 body > header button:first-child {
     color: transparent;
 }
-body > header button, body > footer button {
+body > header button {
     margin: 0 12px 0 0; padding: 12px;
     width: 56px; height: 56px;
     float: left;
@@ -85,6 +87,7 @@ body > header button div {
 }
 
 article > section {
+    margin: 16px 0;
     border-radius: 2px;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
     overflow: auto;
@@ -95,24 +98,37 @@ article > section > header {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
+article > section h2 {
+    margin-left: 16px;
+    font-weight: normal;
+    font-size: 20px;
+    color: #00d;
+}
 article > section > header h2 {
     margin: 0; padding: 128px 16px 16px;
     color: #fff;
+}
+article > section h3 {
+    margin-left: 18px;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
+    color: #00d;
 }
 article > section > header h3 {
     margin: 0; padding: 64px 16px 16px;
     color: #fff;
+}
+article > section h4 {
+    margin-left: 16px;
     font-weight: normal;
     font-size: 18px;
+    color: #00d;
 }
 article > section > header h4 {
     margin: 0; padding: 16px;
     color: #fff;
-    font-weight: normal;
-    font-size: 16px;
 }
+
 article > section > footer {
     padding: 4px;
     border-top: 1px solid #ddd;
@@ -125,7 +141,7 @@ article > footer {
 }
 
 body > nav {
-    position: absolute;
+    position: fixed;
     top: 0; bottom: 0; left: 0;
     overflow: hidden;
     width: 0;
@@ -157,25 +173,19 @@ body > footer {
     position: fixed;
     overflow: auto;
     left: 0; bottom: 0; right: 0;
-    background: #00d;
+    background: #f5f5f5;
     height: 56px;
-    color: #fff;
+    border-top: 1px solid #ddd;
 }
-body > footer button:first-child {
-    font-size: 24px;
+body > footer p {
+    padding-left: 16px;
 }
 
 #matte {
-    position: absolute;
+    position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
     background: rgba(0, 0, 0, 0.5);
     display: none;
-}
-
-@media (min-width: 580px) {
-    html {
-        background: #fff;
-    }
 }
 
 @media (min-width: 800px) {

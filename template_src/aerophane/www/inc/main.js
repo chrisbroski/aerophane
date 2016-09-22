@@ -52,13 +52,15 @@ function Utilities() {
         document.body.appendChild(navNav);
 
         touchclick(document.getElementById("matte"), function () {
-            document.querySelector("nav").style.width = "0";
+            document.querySelector("nav").removeAttribute('style');
             document.getElementById("matte").style.display = "none";
+            document.body.className = "";
         });
 
         touchclick(document.querySelector("body > header button:first-child"), function () {
             document.querySelector("nav").style.width = "240px";
             document.getElementById("matte").style.display = "block";
+            document.body.className = "stop-scrolling";
         });
     }
     this.buildNav = buildNav;
