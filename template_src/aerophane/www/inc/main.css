@@ -67,9 +67,6 @@ body > header h1 {
     line-height: 56px;
     white-space: nowrap;
 }
-body > header button:first-child {
-    color: transparent;
-}
 body > header button {
     margin: 0 12px 0 0; padding: 12px;
     width: 56px; height: 56px;
