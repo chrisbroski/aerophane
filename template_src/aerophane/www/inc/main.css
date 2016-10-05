@@ -4,7 +4,8 @@
 }
 
 html {
-    font-family: droid sans, sans-serif;
+    font-family: sans-serif;
+    letter-spacing: 0.02em;
     background: #f5f5f5;
     color: #555;
 }
@@ -26,6 +27,13 @@ button {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
+
+h1 {font-size: 20px; }
+h2 {font-size: 18px; }
+h3 {font-size: 16px; }
+h4 {font-size: 14px; }
+h5 {font-size: 12px; }
+h6 {font-size: 10px; }
 
 article button, body > footer button {
     text-transform: uppercase;
@@ -59,10 +67,10 @@ body > header {
     background: #f5f5f5;
     height: 56px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+    z-index: 1;
 }
 body > header h1 {
     margin: 0; padding: 0;
-    font-size: 20px;
     font-weight: normal;
     line-height: 56px;
     white-space: nowrap;
@@ -102,7 +110,7 @@ article > section h2 {
     color: #00d;
 }
 article > section > header h2 {
-    margin: 0; padding: 128px 16px 16px;
+    margin: 0; padding: 160px 16px 16px;
     color: #fff;
 }
 article > section h3 {
@@ -134,7 +142,7 @@ article > section > footer {
 article > footer {
     margin: 8px -8px -56px; padding: 8px 8px 112px;
     background: #666;
-    color: #fff
+    color: #fff;
 }
 
 body > nav {
@@ -171,11 +179,89 @@ body > footer {
     overflow: auto;
     left: 0; bottom: 0; right: 0;
     background: #f5f5f5;
-    height: 56px;
     border-top: 1px solid #ddd;
+}
+body > footer.form {
+    text-align: right;
 }
 body > footer p {
     padding-left: 16px;
+}
+
+/* Lists */
+article.list > div {
+    margin: -8px -8px 0; padding: 8px 8px 8px 64px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    min-height: 52px;
+}
+article.list > div i {
+    display: block;
+    position: absolute;
+    top: 12px; left: 12px;
+    line-height: 24px;
+    width: 24px; height: 24px;
+    background: #666;
+    border-radius: 12px;
+    color: #fff;
+    font-style: normal;
+    font-size: 12px;
+    text-align: center;
+}
+
+article.list > div:first-child {
+    padding-top: 16px;
+}
+article.list > div:last-child {
+    padding-bottom: 16px;
+}
+article.list > div:first-child i {
+    top: 20px;
+}
+article.list > div h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+article.list > div h3:last-child {
+    padding-top: 8px;
+}
+article.list > div p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}
+
+/* forms */
+form {
+    background: #fff;
+}
+article > form {
+    margin: -8px -8px 0;
+}
+fieldset {
+    padding: 8px;
+    border: 0 none;
+}
+legend {
+    padding: 24px 0 8px;
+    display: block;
+    font-size: 18px;
+}
+label {
+    margin: 4px 0;
+    font-size: 14px;
+    display: block;
+    color: #888;
+}
+input {
+    width: 90%;
+    font-size: 18px;
+}
+
+button.main_action {
+    color: green;
 }
 
 #matte {

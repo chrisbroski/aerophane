@@ -16,7 +16,10 @@ Some notes:
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 <link rel="stylesheet" type="text/css" href="/inc/main.css">
-<title>Aerophane - List</title>
+<title>Aerophane - Form</title>
+<style>
+
+</style>
 
 <body>
 
@@ -25,30 +28,22 @@ Some notes:
 <h1>H1 body header</h1>
 </header>
 
-<article class="list">
-<div>
-<i>1</i>
-<h3>First Thing</h3>
-<p>Some information about thing #1.</p>
-</div>
-
-<div>
-<i>2</i>
-<h3>Next Thing</h3>
-</div>
-
-<div>
-<i>3</i>
-<h3>Third Thing</h3>
-<p>Some information about thing #3.</p>
-<p>And more information about thing #3.</p>
-<p>And more information about thing #3.</p>
-</div>
-
+<article>
+<form>
+<fieldset>
+<legend>User Information</legend>
+<label>Name</label>
+<input>
+<label>Password</label>
+<input type="password">
+<h2>Gender</h2>
+</fieldset>
+</form>
 </article>
 
-<footer>
-<p>Body footer</p>
+<footer class="form">
+<button>Cancel</button>
+<button class="main_action">Save</button>
 </footer>
 
 <script type="text/javascript" src="/cordova.js"></script>
