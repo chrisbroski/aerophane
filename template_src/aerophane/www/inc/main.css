@@ -173,7 +173,8 @@ body > nav p a {
     text-decoration: none;
     color: #333;
 }
-body > nav p a:hover {
+body > nav p a:hover, #aeroDialogSelect > div:hover {
+    cursor: pointer;
     background: #eee;
 }
 
@@ -280,6 +281,40 @@ select {
 }
 button.main_action {
     color: green;
+}
+select.aeroSelect {
+    visibility: hidden;
+}
+button.dialog {
+    text-transform: none;
+    margin: 0; padding: 4px;
+    font-weight: normal;
+    box-shadow: 0 0 transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    width: 90%;
+    text-align: left;
+}
+button.dialog div.caret {
+    margin: 8px;
+    width: 0; height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #000;
+    float: right;
+}
+
+div.dialog {
+    display: none;
+    position: fixed;
+    background: #fff;
+    top: 64px; right: 64px; bottom: 64px; left: 64px;
+    overflow: auto;
+}
+#aeroDialogSelect > div {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
 }
 
 #matte {
