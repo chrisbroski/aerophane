@@ -51,7 +51,7 @@ article {
     margin: 8px 8px 56px;
     overflow: visible;
     max-width: 580px;
-    border-bottom: 1px solid #ddd;
+    /*border-bottom: 1px solid #ddd;*/
 }
 
 article p {
@@ -193,16 +193,16 @@ body > footer p {
 }
 
 /* Lists */
-article.list > div {
+article.list > div, section.list > div {
     margin: -8px -8px 0; padding: 8px 8px 8px 64px;
     background: #fff;
     position: relative;
     min-height: 52px;
 }
-article.list > div i {
+article.list > div i, section.list > div i {
     display: block;
     position: absolute;
-    top: 12px; left: 12px;
+    top: 12px; left: 20px;
     line-height: 24px;
     width: 24px; height: 24px;
     background: #666;
@@ -213,27 +213,32 @@ article.list > div i {
     text-align: center;
 }
 
-article.list > div:first-child {
+article.list > div:first-child, section.list > div:first-child {
     padding-top: 16px;
 }
-article.list > div:last-child {
+article.list > div:last-child, section.list > div:last-child {
     padding-bottom: 16px;
 }
-article.list > div:first-child i {
+article.list > div:first-child i, section.list > div:first-child i {
     top: 20px;
 }
-article.list > div h3 {
+article.list > div h3, section.list > div h3 {
     margin: 0;
     font-size: 16px;
     font-weight: normal;
 }
-article.list > div h3:last-child {
+article.list > div h3:last-child, section.list > div h3:last-child {
     padding-top: 8px;
 }
-article.list > div p {
+article.list > div p, section.list > div p {
     margin: 0;
     font-size: 14px;
     color: #888;
+}
+
+article > section.list {
+    padding-top: 8px;
+    border: 0 none;
 }
 
 /* forms */
