@@ -170,7 +170,7 @@ function Aerophane() {
     aero = new Aerophane();
 
     aero.buildNav([
-        {"name": "Home", "href": "/index.html"},
+        {"name": "Home", "href": "/home/home.html"},
         {"name": "List", "href": "/list/list.html"},
         {"name": "Form", "href": "/form/form.html"}
     ]);
