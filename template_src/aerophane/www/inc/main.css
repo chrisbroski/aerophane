@@ -199,6 +199,12 @@ article.list > div, section.list > div {
     position: relative;
     min-height: 52px;
 }
+section.list > div {
+    margin: 0; padding: 8px 0 8px 56px;
+    background: #fff;
+    position: relative;
+    min-height: 52px;
+}
 article.list > div i, section.list > div i {
     display: block;
     position: absolute;
@@ -211,6 +217,9 @@ article.list > div i, section.list > div i {
     font-style: normal;
     font-size: 12px;
     text-align: center;
+}
+section.list > div i {
+    left: 12px;
 }
 
 article.list > div:first-child, section.list > div:first-child {
@@ -237,8 +246,12 @@ article.list > div p, section.list > div p {
 }
 
 article > section.list {
-    padding-top: 8px;
+    margin-top: 16px;
     border: 0 none;
+}
+
+article > section.list > div:first-child {
+    padding-top: 8px;
 }
 
 /* forms */
