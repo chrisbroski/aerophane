@@ -28,7 +28,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         var ii, len = els.length;
 
         for (ii = 0; ii < len; ii += 1) {
-            func.call(this, els[ii], ii);
+            func(els[ii], ii);
         }
     }
     this.forEachElement = forEachElement;

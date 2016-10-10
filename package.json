@@ -1,14 +1,14 @@
 {
-  "name": "aerophane-cordova",
+  "name": "aerophane",
   "version": "1.0.0",
-  "description": "A template for creating fast, light, responsive mobile apps in a web browser.",
+  "description": "A template for creating fast, light, responsive hybrid mobile apps.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisbroski/aerophane-cordova.git"
+    "url": "https://github.com/chrisbroski/aerophane"
   },
   "keywords": [
     "cordova",
@@ -21,7 +21,7 @@
   "author": "Chris Broski",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisbroski/aerophane-cordova/issues"
+    "url": "https://github.com/chrisbroski/aerophane/issues"
   },
-  "homepage": "https://github.com/chrisbroski/aerophane-cordova#readme"
+  "homepage": "https://github.com/chrisbroski/aerophane#readme"
 }
