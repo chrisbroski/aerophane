@@ -11,12 +11,17 @@
     "url": "https://github.com/chrisbroski/aerophane"
   },
   "keywords": [
+    "ecosystem:cordova",
+    "cordova:template",
     "cordova",
-    "light",
+    "phonegap",
     "material",
+    "light",
     "hybrid",
     "web",
-    "responsive"
+    "responsive",
+    "mdl",
+    "material design"
   ],
   "author": "Chris Broski",
   "license": "ISC",
