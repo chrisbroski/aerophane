@@ -11,9 +11,9 @@ var aero;
     }
 
     aero = new Aerophane([
-        {"name": "Home", "href": "/home/home.html"},
-        {"name": "List", "href": "/list/list.html"},
-        {"name": "Form", "href": "/form/form.html"}
+        {"name": "Home", "href": "../home/home.html"},
+        {"name": "List", "href": "../list/list.html"},
+        {"name": "Form", "href": "../form/form.html"}
     ]);
 
 }());
