@@ -1,7 +1,7 @@
 /*jslint browser: true */
-/*globals aero */
+/*global aero */
 
 (function init() {
     "use strict";
-    aero.dialogSelect(document.querySelectorAll('select.aeroSelect'));
+    aero.dialogSelect(document.querySelectorAll("select.aeroSelect"));
 }());

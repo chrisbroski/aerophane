@@ -1,11 +1,10 @@
-/*jslint browser: true, this, for */
+/*jslint browser: true, this, for, multivar */
+/*global window */
 
 function Aerophane(mainMenuData, mainDeviceReady) {
     "use strict";
 
-    var pageDeviceReady;
-    var isDeviceReady = false;
-    var classname;
+    var pageDeviceReady, isDeviceReady = false, classname;
 
     function getEventTarget(e) {
         var targ;
@@ -28,8 +27,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.touchclick = touchclick;
 
     function forEachElement(els, func) {
-        var ii;
-        var len = els.length;
+        var ii, len = els.length;
 
         for (ii = 0; ii < len; ii += 1) {
             func(els[ii], ii);
@@ -38,8 +36,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.forEachElement = forEachElement;
 
     function manipulateClassNames(addOrRemove, el, class_name) {
-        var classString = el.className;
-        var classArray;
+        var classString = el.className, classArray;
 
         classArray = classString.split(" ");
 
@@ -93,11 +90,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     }
 
     function buildNav(navItems) {
-        var navButton;
-        var navNav;
-        var navH2;
-        var navP;
-        var navA;
+        var navButton, navNav, navH2, navP, navA;
 
         navButton = document.querySelector("body > header button:first-child");
         navButton.innerHTML = "<div></div><div></div><div></div>";
@@ -130,9 +123,9 @@ function Aerophane(mainMenuData, mainDeviceReady) {
             return;
         }
         forEachElement(selects, function (el) {
-            var dsButton = document.createElement("button");
-            var dsLabel = document.createElement("span");
-            var caret = document.createElement("div");
+            var dsButton = document.createElement("button"),
+                dsLabel = document.createElement("span"),
+                caret = document.createElement("div");
 
             dsButton.className = "dialog";
             dsLabel.textContent = el.value;
@@ -142,8 +135,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
 
             el.parentNode.insertBefore(dsButton, el);
             dsButton.onclick = function (e) {
-                var elDialog;
-                var dialogOption;
+                var elDialog, dialogOption;
                 e.preventDefault();
                 classname.add(document.body, "stop-scrolling");
                 document.getElementById("matte").style.display = "block";
