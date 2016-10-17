@@ -35,6 +35,12 @@ h4 {font-size: 14px; }
 h5 {font-size: 12px; }
 h6 {font-size: 10px; }
 
+pre {
+    margin: 12px 16px; padding: 8px;
+    overflow: auto;
+    background: #eee;
+}
+
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
     margin: 2em 0 2em 24px;
     font-size: larger;
@@ -59,7 +65,7 @@ article {
     /*border-bottom: 1px solid #ddd;*/
 }
 
-article p {
+article p, body > div.dialog p {
     margin: 12px 16px;
     line-height: 1.4em;
     font-size: 15px;
@@ -111,7 +117,7 @@ article > section > header {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
-article > section h2 {
+article > section h2, body > div.dialog h2 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 20px;
@@ -121,7 +127,7 @@ article > section > header h2 {
     margin: 0; padding: 160px 16px 16px;
     color: #fff;
 }
-article > section h3 {
+article > section h3, body > div.dialog h3 {
     margin-left: 18px;
     font-weight: normal;
     font-size: 18px;
@@ -131,7 +137,7 @@ article > section > header h3 {
     margin: 0; padding: 64px 16px 16px;
     color: #fff;
 }
-article > section h4 {
+article > section h4, body > div.dialog h4 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 18px;
@@ -328,12 +334,13 @@ button.dialog div.caret {
     float: right;
 }
 
-div.dialog {
+body > div.dialog {
     display: none;
     position: fixed;
     background: #fff;
     top: 64px; right: 64px; bottom: 64px; left: 64px;
     overflow: auto;
+    z-index: 2;
 }
 #aeroDialogSelect > div {
     padding: 16px;
@@ -364,5 +371,8 @@ div.dialog {
     }
     body > nav {
         width: 240px;
+    }
+    #matte {
+        z-index: 1;
     }
 }

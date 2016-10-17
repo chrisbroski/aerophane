@@ -1,5 +1,5 @@
 /*jslint browser: true */
-/*globals Aerophane */
+/*global Aerophane */
 
 var aero;
 

@@ -31,8 +31,8 @@ Some notes:
 <header>
 <h2>Section Header H2</h2>
 </header>
-<p>Google's <a href="https://material.google.com/">material design</a> is a visual style made for mobile user interfaces. Aerophane is a template that embraces this style to create an ultra light starting point for hybrid mobile web development.
-<p>Aerophane strives to have a small footprint, run blazingly fast, and be exceedingly easy to modify while also implementing the most common features used in modern mobile UIs.
+<p>Google's <a href="https://material.google.com/">material design</a> is a visual style for mobile user interfaces. Aerophane is a template that embraces material design ideas to create an ultra light starting point for hybrid mobile web development.
+<p>Aerophane strives to have a small footprint, run blazingly fast, and be pleasant to modify while also implementing the most common features used in modern mobile UIs.
 <footer>
 <button>Section footer button</button>
 </footer>
@@ -42,19 +42,29 @@ Some notes:
 <header>
 <h3>Section Header H3</h3>
 </header>
-<p>Content</p>
+<p>Aerophane does not use copious classes to connect styles to HTML elements. Elements acquire their styling based on their position in the document. For example, the <code>&lt;article&gt;</code> tag is the basic container, a <code>&lt;section&gt;</code>` element inside an article is displayed in a "card" style, and a <code>&lt;header&gt;</code>` inside a section card looks like the blue space above. Check the source code of the exmaples for specifics.
+<p>Furthermore, HTML is not indented. HTML is document markup, not logical code. Combined with sparse class attributes and minimal HTML*, the UI code should be nearly as readable as a markdown document.
 </section>
 
 <section>
 <header>
 <h4>Section Header H4</h4>
 </header>
-<p>Content</p>
+<p>Aerophane comes with a few common UI features, most notably, a <button id="exampleDialog">dialog</button>
+<p>Once you initialize the Aerophane object, you have access to a few other JavaScript utility functions including:
+<h4>forEachElement</h4>
+<p>The JavaScript forEach array method doesn't work on element collections, so I find his handy to avoid writing for loops.
+<pre>aero.forEachElement(<em>elementCollection</em>, <em>elementFunction</em>);</pre>
+<h4>classname</h4>
+<p>Another utility function that Aerophane adds that would be completely unecessary if you are using jQuery is a method to work with class attributes.
+<pre>aero.classname.add(<em>element</em>, <em>classname</em>);
+aero.classname.remove(<em>element</em>, <em>classname</em>);
+</pre>
 </section>
 
 <section>
-<h2>Section H2</h2>
-<p>Content</p>
+<h2>*Minimal HTML</h2>
+<p>Only use as much HTML as needed. If an element can be removed, it should be. If an element has an optional end tag, then don't use the end tag unless there is good reason.
 </section>
 
 <footer>
@@ -67,6 +77,14 @@ Some notes:
 <button>Button</button>
 </footer>
 
+<div class="dialog">
+<h2>Dialog</h2>
+<p><code>&lt;div&gt;</code> elements with the class "dialog" that are a direct child of the body tag will be not displayed by default. They can be shown like this:
+<pre>aero.showDialog(<em>element</em>);</pre>
+<p>Touch the background to close.
+</div>
+
 <script type="text/javascript" src="../cordova.js"></script>
 <script type="text/javascript" src="../inc/Aerophane.js"></script>
 <script type="text/javascript" src="../inc/main.js"></script>
+<script type="text/javascript" src="home.js"></script>

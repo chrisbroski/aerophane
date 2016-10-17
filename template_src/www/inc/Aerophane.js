@@ -1,7 +1,9 @@
-/*jslint browser: true */
+/*jslint browser: true, this, for, multivar */
+/*global window */
 
 function Aerophane(mainMenuData, mainDeviceReady) {
     "use strict";
+
     var pageDeviceReady, isDeviceReady = false, classname;
 
     function getEventTarget(e) {
@@ -61,8 +63,14 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     };
     this.classname = classname;
 
+    function showDialog(el) {
+        document.getElementById("matte").style.display = "block";
+        el.style.display = "block";
+    }
+    this.showDialog = showDialog;
+
     function clearDialogs() {
-        document.querySelector("nav").removeAttribute('style');
+        document.querySelector("nav").removeAttribute("style");
         forEachElement(document.querySelectorAll("div.dialog"), function (el) {
             el.style.display = "none";
         });
@@ -84,8 +92,8 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     function buildNav(navItems) {
         var navButton, navNav, navH2, navP, navA;
 
-        navButton = document.querySelector('body > header button:first-child');
-        navButton.innerHTML = '<div></div><div></div><div></div>';
+        navButton = document.querySelector("body > header button:first-child");
+        navButton.innerHTML = "<div></div><div></div><div></div>";
 
         navNav = document.createElement("nav");
         navH2 = document.createElement("h2");
@@ -119,10 +127,10 @@ function Aerophane(mainMenuData, mainDeviceReady) {
                 dsLabel = document.createElement("span"),
                 caret = document.createElement("div");
 
-            dsButton.className = 'dialog';
+            dsButton.className = "dialog";
             dsLabel.textContent = el.value;
             dsButton.appendChild(dsLabel);
-            caret.className = 'caret';
+            caret.className = "caret";
             dsButton.appendChild(caret);
 
             el.parentNode.insertBefore(dsButton, el);
