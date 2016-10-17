@@ -1,8 +1,11 @@
-/*jslint browser: true */
+/*jslint browser: true, this, for */
 
 function Aerophane(mainMenuData, mainDeviceReady) {
     "use strict";
-    var pageDeviceReady, isDeviceReady = false, classname;
+
+    var pageDeviceReady;
+    var isDeviceReady = false;
+    var classname;
 
     function getEventTarget(e) {
         var targ;
@@ -25,7 +28,8 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.touchclick = touchclick;
 
     function forEachElement(els, func) {
-        var ii, len = els.length;
+        var ii;
+        var len = els.length;
 
         for (ii = 0; ii < len; ii += 1) {
             func(els[ii], ii);
@@ -34,7 +38,8 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.forEachElement = forEachElement;
 
     function manipulateClassNames(addOrRemove, el, class_name) {
-        var classString = el.className, classArray;
+        var classString = el.className;
+        var classArray;
 
         classArray = classString.split(" ");
 
@@ -61,8 +66,14 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     };
     this.classname = classname;
 
+    function showDialog(el) {
+        document.getElementById("matte").style.display = "block";
+        el.style.display = "block";
+    }
+    this.showDialog = showDialog;
+
     function clearDialogs() {
-        document.querySelector("nav").removeAttribute('style');
+        document.querySelector("nav").removeAttribute("style");
         forEachElement(document.querySelectorAll("div.dialog"), function (el) {
             el.style.display = "none";
         });
@@ -82,10 +93,14 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     }
 
     function buildNav(navItems) {
-        var navButton, navNav, navH2, navP, navA;
+        var navButton;
+        var navNav;
+        var navH2;
+        var navP;
+        var navA;
 
-        navButton = document.querySelector('body > header button:first-child');
-        navButton.innerHTML = '<div></div><div></div><div></div>';
+        navButton = document.querySelector("body > header button:first-child");
+        navButton.innerHTML = "<div></div><div></div><div></div>";
 
         navNav = document.createElement("nav");
         navH2 = document.createElement("h2");
@@ -115,19 +130,20 @@ function Aerophane(mainMenuData, mainDeviceReady) {
             return;
         }
         forEachElement(selects, function (el) {
-            var dsButton = document.createElement("button"),
-                dsLabel = document.createElement("span"),
-                caret = document.createElement("div");
+            var dsButton = document.createElement("button");
+            var dsLabel = document.createElement("span");
+            var caret = document.createElement("div");
 
-            dsButton.className = 'dialog';
+            dsButton.className = "dialog";
             dsLabel.textContent = el.value;
             dsButton.appendChild(dsLabel);
-            caret.className = 'caret';
+            caret.className = "caret";
             dsButton.appendChild(caret);
 
             el.parentNode.insertBefore(dsButton, el);
             dsButton.onclick = function (e) {
-                var elDialog, dialogOption;
+                var elDialog;
+                var dialogOption;
                 e.preventDefault();
                 classname.add(document.body, "stop-scrolling");
                 document.getElementById("matte").style.display = "block";
