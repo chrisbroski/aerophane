@@ -65,6 +65,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
 
     function showDialog(el) {
         document.getElementById("matte").style.display = "block";
+        classname.add(document.body, "stop-scrolling");
         el.style.display = "block";
     }
     this.showDialog = showDialog;
@@ -137,8 +138,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
             dsButton.onclick = function (e) {
                 var elDialog, dialogOption;
                 e.preventDefault();
-                classname.add(document.body, "stop-scrolling");
-                document.getElementById("matte").style.display = "block";
+
                 elDialog = document.createElement("div");
                 elDialog.className = "dialog";
                 elDialog.id = "aeroDialogSelect";
@@ -158,7 +158,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
                 });
 
                 document.body.appendChild(elDialog);
-                elDialog.style.display = "block";
+                showDialog(elDialog);
             };
         });
     }
