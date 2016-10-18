@@ -164,6 +164,61 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     }
     this.dialogSelect = dialogSelect;
 
+    function getTabIndex() {
+        if (!location.hash) {
+            return 1;
+        }
+        if (!location.hash.slice(0, 4) === "#tab") {
+            return 1;
+        }
+        var tabIndex = parseInt(location.hash.slice(4));
+        if (tabIndex) {
+            return tabIndex;
+        }
+        return 1;
+    }
+
+    function showTab(tabIndex) {
+        var tabArticles = document.querySelectorAll("article.tabs");
+
+        aero.forEachElement(tabArticles, function (el, ii) {
+            if (ii === tabIndex - 1) {
+                el.style.display = "block";
+            } else {
+                el.style.display = "none";
+            }
+        });
+    }
+
+    function tabInit() {
+        var tabArticles = document.querySelectorAll("article.tabs");
+
+        aero.forEachElement(tabArticles, function (el, ii) {
+            var tabNav, tabA;
+
+            if (ii === 0) {
+                tabNav = document.createElement("nav");
+                tabNav.className = "tabs";
+                document.body.insertBefore(tabNav, el);
+            }
+
+            tabA = document.createElement("a");
+            tabA.textContent = el.getElementsByTagName("h2")[0].textContent;
+            tabA.href = "#tab" + (ii + 1);
+            document.querySelector("body > nav").appendChild(tabA);
+        });
+
+        window.onhashchange = function () {
+            showTab(getTabIndex());
+        };
+
+        showTab(getTabIndex());
+    }
+
+    this.tab = {};
+    this.tab.init = tabInit;
+    this.tab.show = showTab;
+
     this.setPageDeviceReady = function (func) {
         pageDeviceReady = func;
 
