@@ -9,7 +9,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     function getEventTarget(e) {
         var targ;
         targ = e.target || e.srcElement;
-        if (targ.nodeType === 3) { // defeat Safari bug
+        if (targ.nodeType === 3) {
             targ = targ.parentNode;
         }
         return targ;
