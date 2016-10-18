@@ -4,7 +4,7 @@ Aerophane is an extra-light [Material Design](https://material.google.com/) temp
 
 ## Use
 
-After you have all of the prerequisites to make Cordova application (including [Node.js](https://nodejs.org/), [Git](https://git-scm.com/), [Cordova](https://cordova.apache.org/), and your target environment's development tools - [Android Studio](https://developer.android.com/studio/) and/or [Xcode](https://developer.apple.com/xcode/)) you can create a new app with the Aerophane template with a command like this:
+After you have all of the prerequisites to make Cordova applications (including [Node.js](https://nodejs.org/), [Git](https://git-scm.com/), [Cordova](https://cordova.apache.org/), and your target environment's development tools - [Android Studio](https://developer.android.com/studio/) and/or [Xcode](https://developer.apple.com/xcode/)) you can create a new app with the Aerophane template using a command like this:
 
     cordova create *appname* --template aerophane
 
@@ -30,10 +30,10 @@ There are no gratuitous divs and classes. The HTML used for the UI looks exactly
 
 Aerophane is intended to work well in both Android and iOS devices.
 
-## Features
+## Main Features
 
 * Slide-out hamburger main menu that stays out when the screen is over a certain width.
 * Common UI elements including floating headers and footers, lists, cards, buttons, and form inputs.
 * Custom dialog popups that can also power a cross-platform dropdown input selector.
-* Common JavaScript utility functions to get event targets, for/each loop through an element collection, and manipulate class names.
+* Common JavaScript utility functions to get event targets, for/each loop through an element collections, and manipulate class names.
 * Handles the device ready event both app-wide and per UI page.
