@@ -71,7 +71,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.showDialog = showDialog;
 
     function clearDialogs() {
-        document.querySelector("nav").removeAttribute("style");
+        document.querySelector("nav#main").removeAttribute("style");
         forEachElement(document.querySelectorAll("div.dialog"), function (el) {
             el.style.display = "none";
         });
@@ -97,6 +97,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         navButton.innerHTML = "<div></div><div></div><div></div>";
 
         navNav = document.createElement("nav");
+        navNav.id = "main";
         navH2 = document.createElement("h2");
         navH2.textContent = "Aerophane";
         navNav.appendChild(navH2);
@@ -113,7 +114,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         document.body.appendChild(navNav);
 
         touchclick(document.querySelector("body > header button:first-child"), function () {
-            document.querySelector("nav").style.width = "240px";
+            document.querySelector("body > nav#main").style.width = "240px";
             document.getElementById("matte").style.display = "block";
             manipulateClassNames("add", document.body, "stop-scrolling");
         });
@@ -179,13 +180,16 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     }
 
     function showTab(tabIndex) {
-        var tabArticles = document.querySelectorAll("article.tabs");
+        var tabArticles = document.querySelectorAll("article.tabs"),
+            tabTabs = document.querySelectorAll("nav.tabs a");
 
         aero.forEachElement(tabArticles, function (el, ii) {
             if (ii === tabIndex - 1) {
-                el.style.display = "block";
+                el.className = "tabs active";
+                tabTabs[ii].className = "active";
             } else {
-                el.style.display = "none";
+                el.className = "tabs";
+                tabTabs[ii].className = "";
             }
         });
     }
@@ -194,7 +198,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         var tabArticles = document.querySelectorAll("article.tabs");
 
         aero.forEachElement(tabArticles, function (el, ii) {
-            var tabNav, tabA;
+            var tabNav, tabA, tabName;
 
             if (ii === 0) {
                 tabNav = document.createElement("nav");
@@ -203,7 +207,9 @@ function Aerophane(mainMenuData, mainDeviceReady) {
             }
 
             tabA = document.createElement("a");
-            tabA.textContent = el.getElementsByTagName("h2")[0].textContent;
+            tabName = el.firstElementChild;
+            tabA.textContent = tabName.textContent;
+            el.removeChild(tabName);
             tabA.href = "#tab" + (ii + 1);
             document.querySelector("body > nav").appendChild(tabA);
         });

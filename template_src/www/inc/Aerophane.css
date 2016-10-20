@@ -42,8 +42,9 @@ pre {
 }
 
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
-    margin: 2em 0 2em 24px;
+    margin: 1.5em 0 1.5em 16px;
     font-size: larger;
+    color: #00d;
 }
 
 article button, body > footer button {
@@ -63,6 +64,9 @@ article {
     overflow: visible;
     max-width: 580px;
     /*border-bottom: 1px solid #ddd;*/
+}
+article > *:last-child {
+    padding-bottom: 112px;
 }
 
 article p, body > div.dialog p {
@@ -154,12 +158,12 @@ article > section > footer {
 }
 
 article > footer {
-    margin: 8px -8px -56px; padding: 8px 8px 112px;
+    margin: 8px -8px -56px; padding: 8px;
     background: #666;
     color: #fff;
 }
 
-body > nav {
+body > nav#main {
     position: fixed;
     top: 0; bottom: 0; left: 0;
     overflow: hidden;
@@ -168,23 +172,23 @@ body > nav {
     transition: width 0.2s;
 }
 
-body > nav h2 {
+body > nav#main h2 {
     margin: 32px 0 16px 16px;
     font-size: 18px;
     font-weight: normal;
     color: #00d;
 }
-body > nav p {
+body > nav#main p {
     margin: 0;
     font-size: 14px;
 }
-body > nav p a {
+body > nav#main p a {
     padding: 16px;
     display: block;
     text-decoration: none;
     color: #333;
 }
-body > nav p a:hover, #aeroDialogSelect > div:hover {
+body > nav p.main a:hover, #aeroDialogSelect > div:hover {
     cursor: pointer;
     background: #eee;
 }
@@ -369,7 +373,7 @@ body > div.dialog {
     body > header button {
         display: none;
     }
-    body > nav {
+    body > nav#main {
         width: 240px;
     }
     #matte {

@@ -10,20 +10,31 @@
 <title>Aerophane - Home</title>
 <style>
 nav.tabs {
-    padding: 24px 8px 0;
+    padding: 24px 0 0;
     position: static;
     overflow: auto;
     width: auto;
+    white-space: nowrap;
+    border: 1px solid #ddd;
 }
 nav.tabs a {
-    margin-right: 8px;
-    padding: 8px;
-    border-top: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    padding: 8px 16px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+}
+nav.tabs a.active {
+    border-bottom: 2px solid #00d;
+}
+nav.tabs a:active {
+    background: rgba(0, 0, 221, 0.2);
+    color: #333;
 }
 article.tabs {
     display: none;
+}
+article.tabs.active {
+    display: block;
 }
 </style>
 
@@ -35,17 +46,20 @@ article.tabs {
 </header>
 
 <article class="tabs">
-<h2>Main Tab</h2>
+<h2>Main Tab zfdsafdsaf</h2>
+<h3>First panel of stuff</h3>
 <p>1 fjiop ipgas hiopsa hoafd n;as n;kl
 </article>
 
 <article class="tabs">
-<h2>Next Tab</h2>
+<h2>Next Tab gdshtshgd</h2>
+<h3>Next panel of stuff</h3>
 <p>2 fjiop ipgas hiopsa hoafd n;as n;kl
 </article>
 
 <article class="tabs">
-<h2>Last Tab</h2>
+<h2>Last Tab 65ehytrdhtf</h2>
+<h3>Last panel of stuff</h3>
 <p>3 fjiop ipgas hiopsa hoafd n;as n;kl
 </article>
 
