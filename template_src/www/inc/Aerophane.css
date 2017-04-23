@@ -43,7 +43,6 @@ pre {
 
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
     margin: 1.5em 0 1.5em 16px;
-    font-size: larger;
 }
 
 article button, body > footer button {
@@ -320,7 +319,7 @@ nav.tabs {
     overflow: auto;
     width: auto;
     white-space: nowrap;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 nav.tabs a {
     padding: 8px 16px;
