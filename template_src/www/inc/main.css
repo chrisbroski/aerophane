@@ -31,6 +31,11 @@ article > section h2, article > section h3, article > section h4 {
     color: #00d;
 }
 
+/* Footer */
+article > footer {
+    background: #00d;
+}
+
 /* Dialog h2 - h4 */
 body > div.dialog h2, body > div.dialog h3, body > div.dialog h4 {
     color: #00d;
