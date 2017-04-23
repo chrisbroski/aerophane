@@ -1,10 +1,11 @@
 /*jslint browser: true, this, for, multivar */
 /*global window */
 
-function Aerophane(mainMenuData, mainDeviceReady) {
+function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     "use strict";
 
     var pageDeviceReady, isDeviceReady = false, classname;
+    mainMenuTitle = mainMenuTitle || "Aerophane";
 
     function getEventTarget(e) {
         var targ;
@@ -99,7 +100,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         navNav = document.createElement("nav");
         navNav.id = "main";
         navH2 = document.createElement("h2");
-        navH2.textContent = "Aerophane";
+        navH2.textContent = mainMenuTitle;
         navNav.appendChild(navH2);
 
         navItems.forEach(function (item) {
