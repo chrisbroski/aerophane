@@ -23,7 +23,7 @@ body.stop-scrolling {
     overflow: hidden;
 }
 
-button {
+button, input[type="button"], input[type="submit"], input[type="reset"] {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
@@ -45,7 +45,7 @@ article > h1, article > h2, article > h3, article > h4, article > h5, article > 
     margin: 1.5em 0 1.5em 16px;
 }
 
-article button, body > footer button {
+article button, article input[type="button"], article input[type="submit"], article input[type="reset"], body > footer button, body > footer input[type="button"], body > footer input[type="submit"], body > footer input[type="reset"] {
     text-transform: uppercase;
     margin: 8px; padding: 12px;
     background: #fff;
@@ -294,15 +294,12 @@ label {
 label.radio {
     display: inline;
 }
-input, select {
+input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], select {
     padding: 4px;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 90%;
     font-size: 18px;
-}
-input[type="radio"], input[type="checkbox"] {
-    width: auto;
 }
 select {
     height: 36px;

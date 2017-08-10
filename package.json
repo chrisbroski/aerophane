@@ -1,6 +1,6 @@
 {
   "name": "aerophane",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A template for fast, customizable, responsive hybrid mobile apps.",
   "main": "index.js",
   "scripts": {
