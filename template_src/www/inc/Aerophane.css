@@ -55,7 +55,7 @@ article button, article input[type="button"], article input[type="submit"], arti
     font-weight: bold;
 }
 
-button:focus {outline: 0 none; }
+button:focus, input:focus {outline: 0 none; }
 
 article {
     padding-bottom: 56px;
