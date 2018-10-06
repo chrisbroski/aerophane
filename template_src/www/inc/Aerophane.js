@@ -208,7 +208,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
         if (!location.hash) {
             return 1;
         }
-        if (!location.hash.slice(0, 4) === "#tab") {
+        if (location.hash.slice(0, 4) !== "#tab") {
             return 1;
         }
         var tabIndex = parseInt(location.hash.slice(4));
