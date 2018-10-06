@@ -1,7 +1,7 @@
 /*jslint browser: true */
 /*global aero */
 
-document.getElementById("exampleDialog").onclick = function () {
+aero.touchclick(document.getElementById("exampleDialog"), function () {
     "use strict";
     aero.showDialog(document.querySelector("div.dialog"));
-};
+});

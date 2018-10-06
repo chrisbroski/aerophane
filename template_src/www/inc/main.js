@@ -10,11 +10,11 @@ var aero;
         return;
     }
 
-    aero = new Aerophane([
+    aero = new Aerophane("Aerophane", [
         {"name": "Home", "href": "../home/home.html"},
         {"name": "List", "href": "../list/list.html"},
-        {"name": "Form", "href": "../form/form.html"},
-        {"name": "Tabs", "href": "../tabs/tabs.html"}
+        {"name": "Tabs", "href": "../tabs/tabs.html"},
+        {"name": "Form", "href": "../form/form.html"}
     ]);
 
 }());

@@ -23,7 +23,7 @@ body.stop-scrolling {
     overflow: hidden;
 }
 
-button {
+button, input[type="button"], input[type="submit"], input[type="reset"] {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
@@ -43,11 +43,9 @@ pre {
 
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
     margin: 1.5em 0 1.5em 16px;
-    font-size: larger;
-    color: #00d;
 }
 
-article button, body > footer button {
+article button, article input[type="button"], article input[type="submit"], article input[type="reset"], body > footer button, body > footer input[type="button"], body > footer input[type="submit"], body > footer input[type="reset"] {
     text-transform: uppercase;
     margin: 8px; padding: 12px;
     background: #fff;
@@ -57,10 +55,11 @@ article button, body > footer button {
     font-weight: bold;
 }
 
-button:focus {outline: 0 none; }
+button:focus, input:focus {outline: 0 none; }
 
 article {
-    margin: 8px 8px 56px;
+    padding-bottom: 56px;
+    margin: 8px;
     overflow: visible;
     max-width: 580px;
 }
@@ -82,6 +81,8 @@ body > header {
     background: #f5f5f5;
     height: 56px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+    background: #eee;
+    color: #333;
 }
 body > header h1 {
     margin: 0; padding: 0;
@@ -116,15 +117,14 @@ article > section:first-child {
     margin-top: 12px;
 }
 article > section > header {
-    background: #00d;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
+    background: #666;
 }
 article > section h2, body > div.dialog h2 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 20px;
-    color: #00d;
 }
 article > section > header h2 {
     margin: 0; padding: 160px 16px 16px;
@@ -134,7 +134,6 @@ article > section h3, body > div.dialog h3 {
     margin-left: 18px;
     font-weight: normal;
     font-size: 18px;
-    color: #00d;
 }
 article > section > header h3 {
     margin: 0; padding: 64px 16px 16px;
@@ -144,7 +143,6 @@ article > section h4, body > div.dialog h4 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 18px;
-    color: #00d;
 }
 article > section > header h4 {
     margin: 0; padding: 16px;
@@ -175,7 +173,6 @@ body > nav#main h2 {
     margin: 32px 0 16px 16px;
     font-size: 18px;
     font-weight: normal;
-    color: #00d;
 }
 body > nav#main p {
     margin: 0;
@@ -297,15 +294,12 @@ label {
 label.radio {
     display: inline;
 }
-input, select {
+input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], select {
     padding: 4px;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 90%;
     font-size: 18px;
-}
-input[type="radio"], input[type="checkbox"] {
-    width: auto;
 }
 select {
     height: 36px;
@@ -314,6 +308,34 @@ select {
 button.main_action {
     color: green;
 }
+
+/* tabs */
+nav.tabs {
+    padding: 24px 0 0;
+    position: static;
+    overflow: auto;
+    width: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #ddd;
+}
+nav.tabs a {
+    padding: 8px 16px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+}
+nav.tabs a:active {
+    background: rgba(0, 0, 221, 0.2);
+    color: #333;
+}
+article.tabs {
+    display: none;
+}
+article.tabs.active {
+    display: block;
+}
+
+/* dialog*/
 select.aeroSelect {
     visibility: hidden;
 }

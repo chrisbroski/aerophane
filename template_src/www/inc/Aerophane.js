@@ -1,24 +1,20 @@
 /*jslint browser: true, this, for, multivar */
 /*global window */
 
-function Aerophane(mainMenuData, mainDeviceReady) {
+function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     "use strict";
 
     var pageDeviceReady, isDeviceReady = false, classname;
+    mainMenuTitle = mainMenuTitle || "Aerophane";
 
-    function getEventTarget(e) {
-        var targ;
-        targ = e.target || e.srcElement;
-        if (targ.nodeType === 3) {
-            targ = targ.parentNode;
-        }
-        return targ;
+    function isTouch() {
+        return ("ontouchstart" in window || "onmsgesturechange" in window);
     }
-    this.getEventTarget = getEventTarget;
+    this.isTouch = isTouch;
 
     function touchclick(el, func, bubble) {
         bubble = !!bubble;
-        if ("ontouchstart" in window || "onmsgesturechange" in window) {
+        if (isTouch()) {
             el.addEventListener("touchstart", func, bubble);
         } else {
             el.addEventListener("click", func, bubble);
@@ -64,6 +60,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     this.classname = classname;
 
     function showDialog(el) {
+        document.activeElement.blur();
         document.getElementById("matte").style.display = "block";
         classname.add(document.body, "stop-scrolling");
         el.style.display = "block";
@@ -99,7 +96,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         navNav = document.createElement("nav");
         navNav.id = "main";
         navH2 = document.createElement("h2");
-        navH2.textContent = "Aerophane";
+        navH2.textContent = mainMenuTitle;
         navNav.appendChild(navH2);
 
         navItems.forEach(function (item) {
@@ -136,7 +133,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
             dsButton.appendChild(caret);
 
             el.parentNode.insertBefore(dsButton, el);
-            dsButton.onclick = function (e) {
+            touchclick(dsButton, function (e) {
                 var elDialog, dialogOption;
                 e.preventDefault();
 
@@ -149,8 +146,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
                     dialogOption.textContent = option.text;
                     dialogOption.setAttribute("data-select-index", index);
                     touchclick(dialogOption, function (e) {
-                        var targ = getEventTarget(e);
-                        el.selectedIndex = +targ.getAttribute("data-select-index");
+                        el.selectedIndex = +this.getAttribute("data-select-index");
                         el.previousSibling.getElementsByTagName("span")[0].textContent = el.value;
                         clearDialogs();
                     });
@@ -160,10 +156,53 @@ function Aerophane(mainMenuData, mainDeviceReady) {
 
                 document.body.appendChild(elDialog);
                 showDialog(elDialog);
-            };
+            });
         });
     }
     this.dialogSelect = dialogSelect;
+
+    function fastForm() {
+        var inputTypes = ["text", "password", "email", "number", "search", "checkbox", "radio"];
+        var inputs = document.querySelectorAll('input, label');
+
+        function fastcheck(elInput) {
+            var inputs, inputType;
+            if (elInput.tagName.toLowerCase() === 'label') {
+                inputs = elInput.getElementsByTagName("input");
+                if (inputs && inputs.length) {
+                    elInput = inputs[0];
+                }
+            }
+            inputType = elInput.getAttribute("type");
+
+            if (inputType) {
+                inputType.toLowerCase();
+            }
+
+            if (inputType === 'checkbox') {
+                elInput.checked = !elInput.checked;
+            }
+            if (inputType === 'radio') {
+                elInput.checked = true;
+            }
+            elInput.focus();
+        }
+
+        forEachElement(inputs, function (el) {
+            var elInputs;
+            if (!isTouch()) {
+                return;
+            }
+            if (!el.getAttribute("type") || inputTypes.indexOf(el.getAttribute("type")) > -1) {
+                el.addEventListener("touchstart", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    fastcheck(this);
+                });
+            }
+        });
+    }
+    this.fastForm = fastForm;
 
     function getTabIndex() {
         if (!location.hash) {
@@ -183,7 +222,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
         var tabArticles = document.querySelectorAll("article.tabs"),
             tabTabs = document.querySelectorAll("nav.tabs a");
 
-        aero.forEachElement(tabArticles, function (el, ii) {
+        forEachElement(tabArticles, function (el, ii) {
             if (ii === tabIndex - 1) {
                 el.className = "tabs active";
                 tabTabs[ii].className = "active";
@@ -197,7 +236,7 @@ function Aerophane(mainMenuData, mainDeviceReady) {
     function tabInit() {
         var tabArticles = document.querySelectorAll("article.tabs");
 
-        aero.forEachElement(tabArticles, function (el, ii) {
+        forEachElement(tabArticles, function (el, ii) {
             var tabNav, tabA, tabName;
 
             if (ii === 0) {
