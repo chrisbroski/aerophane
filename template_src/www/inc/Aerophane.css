@@ -83,6 +83,7 @@ body > header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
     background: #eee;
     color: #333;
+    z-index: 1;
 }
 body > header h1 {
     margin: 0; padding: 0;
@@ -167,12 +168,14 @@ body > nav#main {
     width: 0;
     background: #fff;
     transition: width 0.2s;
+    white-space: nowrap;
 }
 
 body > nav#main h2 {
     margin: 32px 0 16px 16px;
     font-size: 18px;
     font-weight: normal;
+    white-space: nowrap;
 }
 body > nav#main p {
     margin: 0;
@@ -304,9 +307,6 @@ input:not([type]), input[type="text"], input[type="password"], input[type="email
 select {
     height: 36px;
     background: #fff;
-}
-button.main_action {
-    color: green;
 }
 
 /* tabs */

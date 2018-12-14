@@ -45,3 +45,8 @@ body > div.dialog h2, body > div.dialog h3, body > div.dialog h4 {
 nav.tabs a.active {
     border-bottom: 2px solid #00d;
 }
+
+button.main_action {
+    color: white;
+    background: #00d;
+}

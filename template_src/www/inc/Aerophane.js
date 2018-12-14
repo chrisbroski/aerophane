@@ -1,4 +1,3 @@
-/*jslint browser: true, this, for, multivar */
 /*global window */
 
 function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
@@ -13,6 +12,9 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     this.isTouch = isTouch;
 
     function touchclick(el, func, bubble) {
+        if (!el) {
+            return;
+        }
         bubble = !!bubble;
         if (isTouch()) {
             el.addEventListener("touchstart", func, bubble);
@@ -59,6 +61,13 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     };
     this.classname = classname;
 
+    function querystring(fldNm) {
+        var oRe = new RegExp("[\\?&]"+fldNm+"=([^&#]*)");
+        var fldVal = oRe.exec(parent.location.search);
+        return (fldVal) ? unescape(fldVal[1]) : "";
+    }
+    this.querystring = querystring;
+
     function showDialog(el) {
         document.activeElement.blur();
         document.getElementById("matte").style.display = "block";
@@ -68,7 +77,10 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     this.showDialog = showDialog;
 
     function clearDialogs() {
-        document.querySelector("nav#main").removeAttribute("style");
+        var mainNav = document.querySelector("nav#main");
+        if (mainNav && mainNav.hasAttribute("style")) {
+            mainNav.removeAttribute("style");
+        }
         forEachElement(document.querySelectorAll("div.dialog"), function (el) {
             el.style.display = "none";
         });
@@ -78,6 +90,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
         }
         manipulateClassNames("remove", document.body, "stop-scrolling");
     }
+    this.clearDialogs = clearDialogs;
 
     function createMatte() {
         var navMatte = document.createElement("div");
@@ -89,6 +102,10 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
 
     function buildNav(navItems) {
         var navButton, navNav, navH2, navP, navA;
+
+        if (!navItems) {
+            return false;
+        }
 
         navButton = document.querySelector("body > header button:first-child");
         navButton.innerHTML = "<div></div><div></div><div></div>";
