@@ -128,10 +128,15 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
 
         document.body.appendChild(navNav);
 
-        touchclick(document.querySelector("body > header button:first-child"), function () {
-            document.querySelector("body > nav#main").style.width = "240px";
-            document.getElementById("matte").style.display = "block";
-            manipulateClassNames("add", document.body, "stop-scrolling");
+        touchclick(navButton, function () {
+            var mainNav = document.querySelector("body > nav#main");
+            if (mainNav.style.width === "240px") {
+                clearDialogs();
+            } else {
+                mainNav.style.width = "240px";
+                document.getElementById("matte").style.display = "block";
+                manipulateClassNames("add", document.body, "stop-scrolling");
+            }
         });
     }
 

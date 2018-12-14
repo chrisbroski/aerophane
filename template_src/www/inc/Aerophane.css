@@ -162,6 +162,7 @@ article > footer {
 }
 
 body > nav#main {
+    padding-top: 56px;
     position: fixed;
     top: 0; bottom: 0; left: 0;
     overflow: hidden;
