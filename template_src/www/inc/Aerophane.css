@@ -86,13 +86,13 @@ body > header {
     z-index: 1;
 }
 body > header h1 {
-    margin: 0; padding: 0;
+    margin: 0; padding: 0 0 0 16px;
     font-weight: normal;
     line-height: 56px;
     white-space: nowrap;
 }
 body > header button {
-    margin: 0 12px 0 0; padding: 12px;
+    padding: 12px;
     width: 56px; height: 56px;
     float: left;
     background: transparent;
@@ -383,9 +383,20 @@ body > div.dialog {
     body {
         padding-left: 240px;
     }
+    body.nomenu {
+        padding-left: 0;
+    }
+    body.nomenu > article {
+        margin-left: auto;
+        margin-right: auto;
+    }
     body > header {
         padding-left: 16px;
         left: 240px;
+    }
+    body.nomenu > header {
+        padding-left: 256px;
+        left: 0;
     }
     body > footer {
         padding-left: 16px;

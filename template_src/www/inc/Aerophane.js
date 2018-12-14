@@ -104,6 +104,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
         var navButton, navNav, navH2, navP, navA;
 
         if (!navItems) {
+            classname.add(document.body, "nomenu");
             return false;
         }
 
