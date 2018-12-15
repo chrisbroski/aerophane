@@ -1,4 +1,3 @@
-/*jslint browser: true */
 /*global aero */
 
 (function init() {
