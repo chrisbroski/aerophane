@@ -1,5 +1,3 @@
-/*global window */
-
 function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     "use strict";
 
@@ -16,8 +14,19 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
             return;
         }
         bubble = !!bubble;
+
+        function cancelTouchClick() {
+            /* jshint validthis: true */
+            this.removeEventListener("touchend", func, bubble);
+            this.removeEventListener("touchcancel", cancelClick, bubble);
+            /* jshint validthis: false */
+        }
+
         if (isTouch()) {
-            el.addEventListener("touchstart", func, bubble);
+            el.addEventListener("touchstart", function () {
+                this.addEventListener("touchend", func, bubble);
+                this.addEventListener("touchcancel", cancelTouchClick, bubble);
+            }, bubble);
         } else {
             el.addEventListener("click", func, bubble);
         }
