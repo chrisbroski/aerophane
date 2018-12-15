@@ -1,4 +1,3 @@
-/*jslint browser: true */
 /*global Aerophane */
 
 var aero;
