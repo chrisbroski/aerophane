@@ -1,4 +1,5 @@
-/*global aero */
+var aero = new Aerophane();
+aero.buildNav(menuTitle, menuData);
 
 aero.touchclick(document.getElementById("exampleDialog"), function () {
     "use strict";

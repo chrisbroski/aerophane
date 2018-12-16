@@ -1,7 +1,5 @@
-/*global aero */
+var aero = new Aerophane();
+aero.buildNav(menuTitle, menuData);
 
-(function init() {
-    "use strict";
-    aero.dialogSelect(document.querySelectorAll("select.aeroSelect"));
-    aero.fastForm();
-}());
+aero.dialogSelect(document.querySelectorAll("select.aeroSelect"));
+aero.fastForm();

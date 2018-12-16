@@ -1,8 +1,7 @@
-function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
+function Aerophane(mainDeviceReady) {
     "use strict";
 
     var pageDeviceReady, isDeviceReady = false, classname;
-    mainMenuTitle = mainMenuTitle || "Aerophane";
 
     function isTouch() {
         return ("ontouchstart" in window || "onmsgesturechange" in window);
@@ -109,10 +108,11 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
         touchclick(navMatte, clearDialogs);
     }
 
-    function buildNav(navItems) {
+    function buildNav(mainMenuTitle, mainMenuData) {
         var navButton, navNav, navH2, navP, navA;
 
-        if (!navItems) {
+        mainMenuTitle = mainMenuTitle || "Aerophane";
+        if (!mainMenuData) {
             classname.add(document.body, "nomenu");
             return false;
         }
@@ -126,7 +126,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
         navH2.textContent = mainMenuTitle;
         navNav.appendChild(navH2);
 
-        navItems.forEach(function (item) {
+        mainMenuData.forEach(function (item) {
             navP = document.createElement("p");
             navA = document.createElement("a");
             navA.textContent = item.name;
@@ -148,6 +148,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
             }
         });
     }
+    this.buildNav = buildNav;
 
     function dialogSelect(selects) {
         if (!selects) {
@@ -317,7 +318,6 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
 
     function initializeAero() {
         createMatte();
-        buildNav(mainMenuData);
         document.addEventListener("deviceready", deviceReady);
     }
 
