@@ -118,7 +118,7 @@ function Aerophane(mainDeviceReady) {
         }
 
         navButton = document.querySelector("body > header button:first-child");
-        navButton.innerHTML = "<div></div><div></div><div></div>";
+        // navButton.innerHTML = "<div></div><div></div><div></div>";
 
         navNav = document.createElement("nav");
         navNav.id = "main";
