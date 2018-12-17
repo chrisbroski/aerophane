@@ -401,6 +401,35 @@ body > div.dialog {
     background: rgba(0, 0, 0, 0.5);
     display: none;
 }
+svg.spinner {
+    animation: spin 1.4s linear infinite;
+  }
+
+svg.spinner circle {
+    stroke: #666;
+    stroke-width: 6;
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: spin-size 1.4s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg); }
+    100% {transform: rotate(270deg); }
+}
+
+@keyframes spin-size {
+    0% {stroke-dashoffset: 187; }
+    50% {
+        stroke-dashoffset: 46.75;
+        transform:rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 187;
+        transform:rotate(450deg);
+    }
+}
 
 @media (min-width: 800px) {
     body {

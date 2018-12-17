@@ -50,3 +50,7 @@ button.main-action {
     color: white;
     background: #00d;
 }
+
+svg.spinner circle {
+    stroke: #00d;
+}
