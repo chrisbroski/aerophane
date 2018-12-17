@@ -54,3 +54,7 @@ button.main-action {
 svg.spinner circle {
     stroke: #00d;
 }
+
+.error {
+    color: red;
+}
