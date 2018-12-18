@@ -55,6 +55,10 @@ svg.spinner circle {
     stroke: #00d;
 }
 
+.progress-determinate:after, .progress-indeterminate:after {
+    background: #00d;
+}
+
 .error {
     color: red;
 }

@@ -404,6 +404,8 @@ body > div.dialog {
     display: none;
     z-index: 1;
 }
+
+/* Progress indicators */
 svg.spinner {
     animation: spin 1.4s linear infinite;
 }
@@ -432,6 +434,32 @@ svg.spinner circle {
         stroke-dashoffset: 187;
         transform:rotate(450deg);
     }
+}
+
+.progress-determinate, .progress-indeterminate {
+    position: relative;
+}
+.progress-determinate:after, .progress-indeterminate:after {
+    content:"";
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+}
+
+.progress-determinate:after {
+    width: var(--width, 0);
+}
+.progress-indeterminate:after {
+    animation: stretch 1.4s linear infinite;
+}
+
+@keyframes stretch {
+    0% {right: 100%; left: 0%; }
+    50% {right: 33%; left: 0%; }
+    75% {right: 0%; left: 50%; }
+    100% {right: 0%; left: 100%; }
 }
 
 @media (min-width: 800px) {
