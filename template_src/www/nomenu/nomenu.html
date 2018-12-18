@@ -7,31 +7,64 @@
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 <link rel="stylesheet" type="text/css" href="../inc/Aerophane.css">
 <link rel="stylesheet" type="text/css" href="../inc/main.css">
+<link rel="stylesheet" type="text/css" href="nomenu.css">
 
 <title>Aerophane - No Menu</title>
 
 <body>
 
 <header>
-<button></button>
-<h1>No Menu (H1 body header)</h1>
+<button><span class="material-icons">arrow_back</span></button>
+<h1>Vector Graphics</h1>
 </header>
 
 <article>
 
 <section>
-<h2>Log In</h2>
-<p><label for="username">User Name</label>
-<p><input name="username" id="username">
-<p><label for="password">Password</label>
-<p><input name="password" id="password" type="password">
-<p><button class="main_action">Log In</button>
+<header>
+<h4>Material Icons</h4>
+</header>
+<p>The icon font and CSS for <a href="https://material.io/tools/icons/">Material Icons</a> are included in the Aerophane template.
+<p><span class="material-icons">face</span>
+<pre>&lt;span class="material-icons"&gt;face&lt;/span&gt;</pre>
 </section>
 
 <section>
-<ul>
-    <li><a href="../home/home.html">Back to Home</a>
-</ul>
+<header class="progress-determinate" style="--width:0%">
+<h4>Determinate Progress Indicator</h4>
+</header>
+
+<p>Adding the <var>progress-determinate</var> class to an element will add a settable progress bar to the bottom. The length of the bar is set with the CSS variable "width". For example:
+
+<pre>&lt;header class="progress-determinate" style="--width:50%"&gt;
+&lt;/header&gt;</pre>
+
+<p>JavaScript on the page is setting the width dynamically.
+</section>
+
+<section>
+<header class="progress-indeterminate">
+<h4>Indeterminate Progress Indicator</h4>
+</header>
+
+<p>Adding the <var>progress-indeterminate</var> class to an element will add a pure CSS animated progress bar to the bottom.
+</section>
+
+<section>
+<header>
+<h4>Spinner</h4>
+</header>
+
+<p><svg class="spinner" width="32px" height="32px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle fill="none" cx="33" cy="33" r="30"></circle></svg>
+
+<p>The circular indeterminate spinner above is an <var>SVG</var> element with the <var>spinner</var> class. Just paste in this markup to create your own.
+
+<pre>&lt;svg class="spinner" width="32px" height="32px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;circle fill="none" cx="33" cy="33" r="30">&lt;/circle&gt;
+&lt;/svg&gt;</pre>
+
+<p>Like the linear indeterminate progress indicator, this is a pure CSS animation. No JavaScript is needed.
+
 </section>
 
 </article>

@@ -46,7 +46,19 @@ nav.tabs a.active {
     border-bottom: 2px solid #00d;
 }
 
-button.main_action {
+button.main-action {
     color: white;
     background: #00d;
+}
+
+svg.spinner circle {
+    stroke: #00d;
+}
+
+.progress-determinate:after, .progress-indeterminate:after {
+    background: #00d;
+}
+
+.error {
+    color: red;
 }

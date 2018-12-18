@@ -2,16 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!--
-Customize this policy to fit your own app's needs. For more guidance, see:
-https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-Some notes:
-* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-* Enable inline JS: add 'unsafe-inline' to default-src
-* To allow everything (for testing only, please): content="default-src * 'unsafe-inline' 'unsafe-eval'"
--->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -23,7 +13,7 @@ Some notes:
 <body>
 
 <header>
-<button>Menu</button>
+<button><span class="material-icons">menu</span></button>
 <h1>Home (H1 body header)</h1>
 </header>
 
@@ -34,6 +24,7 @@ Some notes:
 </header>
 <p>Google's <a href="https://material.google.com/">material design</a> is a visual style for mobile user interfaces. Aerophane is a template that embraces material design ideas to create an ultra light starting point for hybrid mobile web development.
 <p>Aerophane strives to have a small footprint, run blazingly fast, and be easily maintainable template of common features used in modern mobile UIs.
+<p>I've added <a href="../../nomenu/nomenu.html">Material Icons and spinners</a> to make Aerophane a nearly complete toolkit for hybrid mobile development.</span>
 <footer>
 <button>Section footer button</button>
 </footer>
@@ -65,7 +56,7 @@ aero.classname.remove(<em>element</em>, <em>classname</em>);
 </pre>
 
 <h4>touchclick</h4>
-<p>A simple hack to remove some of the unnecessary sluggishness of hybrid mobile is to replace the JavaScript <code>onclick</code> event handler with <code>ontouchstart</code>. The <code>aero.touchclick</code> method event will do this while falling back to click on none-touch interfaces.</p>
+<p>A simple hack to remove some of the unnecessary sluggishness of hybrid mobile is to replace the JavaScript <code>onclick</code> event handler with <code>ontouchstart</code>. The <code>aero.touchclick</code> method event will do this while falling back to click on non-touch interfaces.</p>
 </section>
 
 <section>
