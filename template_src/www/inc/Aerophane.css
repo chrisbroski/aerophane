@@ -184,18 +184,20 @@ article > footer {
 }
 
 body > nav#main {
-    padding-top: 56px;
     position: fixed;
     top: 0; bottom: 0; left: 0;
-    overflow: hidden;
+    overflow: auto;
     width: 0;
     background: #fff;
     transition: width 0.2s;
     white-space: nowrap;
+    z-index: 1
 }
 
 body > nav#main h2 {
-    margin: 32px 0 16px 16px;
+    margin: 0; padding: 0 16px;
+    vertical-align: bottom;
+    line-height: 56px;
     font-size: 18px;
     font-weight: normal;
     white-space: nowrap;
@@ -400,10 +402,11 @@ body > div.dialog {
     top: 0; right: 0; bottom: 0; left: 0;
     background: rgba(0, 0, 0, 0.5);
     display: none;
+    z-index: 1;
 }
 svg.spinner {
     animation: spin 1.4s linear infinite;
-  }
+}
 
 svg.spinner circle {
     stroke: #666;
