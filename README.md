@@ -6,7 +6,7 @@ Aerophane is an extra-light [Material Design](https://material.google.com/) temp
 
 After you have all of the prerequisites to make Cordova applications (including [Node.js](https://nodejs.org/), [Git](https://git-scm.com/), [Cordova](https://cordova.apache.org/), and your target environment's development tools - [Android Studio](https://developer.android.com/studio/) and/or [Xcode](https://developer.apple.com/xcode/)) you can create a new app with the Aerophane template using a command like this:
 
-    cordova create *appname* --template aerophane
+    cordova create *appname* *com.yourdomain.appname* "*App Name*" --template aerophane
 
 If you want to learn more about Cordova, [this is a great place to start](https://cordova.apache.org/docs/en/latest/guide/cli/index.html).
 
