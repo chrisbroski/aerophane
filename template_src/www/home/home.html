@@ -13,29 +13,31 @@
 <body>
 
 <header>
-<button><span class="material-icons">menu</span></button>
-<button id="select-style" data-menu-id="style-selector">
-    <span class="material-icons">more_vert</span>
-</button>
-<h1>Aerophane</h1>
+    <button><span class="material-icons">menu</span></button>
+    <button id="select-style" data-menu-id="style-selector">
+        <span class="material-icons">more_vert</span>
+    </button>
+    <h1>Aerophane</h1>
 </header>
 
 <article>
 <section>
 <header>
-<h2>Section Header H2</h2>
+    <h2>Section Header H2</h2>
 </header>
+
 <p>Google's <a href="https://material.google.com/">material design</a> is a visual style for mobile user interfaces. Aerophane is a template that embraces material design ideas to create an ultra light starting point for hybrid mobile web development.
 <p>Aerophane strives to have a small footprint, run blazingly fast, and be easily maintainable template of common features used in modern mobile UIs.
-<p>I've added <a href="../nomenu/nomenu.html">Material Icons and spinners</a> to make Aerophane a nearly complete toolkit for hybrid mobile development.</span>
+<p>I've added Material Icons and spinners to make Aerophane a nearly complete toolkit for hybrid mobile development.</span>
+
 <footer>
-<button>Section footer button</button>
+    <button>Section footer button</button>
 </footer>
 </section>
 
 <section>
 <header>
-<h3>Section Header H3</h3>
+    <h3>Section Header H3</h3>
 </header>
 
 <p>Aerophane does not use copious classes to connect styles to HTML elements. Elements acquire their styling based on their position in the document. For example, the <code>&lt;article&gt;</code> tag is the basic container, a <code>&lt;section&gt;</code>` element inside an article is displayed in a "card" style, and a <code>&lt;header&gt;</code>` inside a section card looks like the blue space above. Check the source code of the examples for specifics.
@@ -43,8 +45,9 @@
 
 <section>
 <header>
-<h4>Section Header H4</h4>
+    <h4>Section Header H4</h4>
 </header>
+
 <p>Aerophane comes with a few common UI features, most notably, a <button id="exampleDialog">dialog</button>
 <p>Once you initialize the Aerophane object, you have access to a few other JavaScript utility functions including:
 
@@ -63,31 +66,29 @@ aero.classname.remove(<em>element</em>, <em>classname</em>);
 </section>
 
 <section>
-<h5>Modular File Structure</h5>
-<p>Each screen is a separate HTML page in its own folder. Files unique to the page - CSS, JavaScript, images - are contained in that folder. Application-wide files should be placed in the <code>inc</code> folder.
+    <h5>Modular File Structure</h5>
+    <p>Each screen is a separate HTML page in its own folder. Files unique to the page - CSS, JavaScript, images - are contained in that folder. Application-wide files should be placed in the <code>inc</code> folder.
 </section>
 
 <footer>
-<p>&copy; ChaosScape 2018</p>
+    <p>&copy; ChaosScape 2018</p>
 </footer>
 
 </article>
 
-<footer>
-<button>Body Footer Button</button>
-</footer>
-
 <div class="dialog">
-<h2>Dialog</h2>
-<p><code>&lt;div&gt;</code> elements with the class "dialog" that are a direct child of the body tag will be not displayed by default. They can be shown like this:
-<pre>aero.showDialog(<em>element</em>);</pre>
-<p>Touch the background to close.
+    <h2>Dialog</h2>
+    <p><code>&lt;div&gt;</code> elements with the class "dialog" that are a direct child of the body tag will be not displayed by default. They can be shown like this:
+    <pre>aero.showDialog(<em>element</em>);</pre>
+    <p>Touch the background to close.
 </div>
 
 <menu id="style-selector">
     <li id="style-default">Default
     <li id="style-blue">Blue
 </menu>
+
+<button id="fab"><a href="../nomenu/nomenu.html">Icons and Spinners</a></button>
 
 <script type="text/javascript" src="../cordova.js"></script>
 <script type="text/javascript" src="../inc/Aerophane.js"></script>

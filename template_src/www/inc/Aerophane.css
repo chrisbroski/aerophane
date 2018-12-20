@@ -353,6 +353,7 @@ nav.tabs {
     overflow: auto;
     width: auto;
     white-space: nowrap;
+    background: white;
     border-bottom: 1px solid #ddd;
 }
 nav.tabs a {
@@ -370,7 +371,10 @@ nav.tabs a.active {
     color: #233;
 }
 article.tabs {
+    margin: 0 -4px; padding: 0 4px;
     display: none;
+    background: white;
+    overflow: auto;
 }
 article.tabs.active {
     display: block;
@@ -382,19 +386,30 @@ button.main-action {
     background: #233;
 }
 
-div#fab {
-    width: 60px; height: 60px;
+#fab {
     position: fixed;
     bottom: 12px;
     right: 12px;
-    border-radius: 60px;
     background-color: #233;
-    font-size: 48px;
-    line-height: 60px;
     color: #fff;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     cursor: pointer;
+}
+div#fab {
+    width: 60px; height: 60px;
+    border-radius: 60px;
+    font-size: 48px;
+    line-height: 60px;
+}
+button#fab {
+    margin: 0; padding: 12px;
+    font-size: 20px;
+    border: 0 none;
+}
+button#fab a {
+    text-decoration: none;
+    color: white;
 }
 
 .error {
