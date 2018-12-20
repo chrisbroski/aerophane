@@ -4,9 +4,6 @@
     <description>
         A lightweight basic template for Cordova apps.
     </description>
-    <author email="chrisbroski@gmail.com" href="http://chaosscape.com">
-        Chris Broski
-    </author>
     <content src="home/home.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
