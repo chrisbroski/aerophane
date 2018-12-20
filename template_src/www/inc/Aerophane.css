@@ -253,7 +253,7 @@ article.list > div, section.list > div {
     min-height: 52px;
 }
 section.list > div {
-    margin: 0; padding: 8px 0 8px 56px;
+    margin: 0; padding: 8px 8px 8px 56px;
     background: #fff;
     position: relative;
     min-height: 52px;
@@ -298,13 +298,11 @@ article.list > div p, section.list > div p {
     color: #888;
 }
 
-article > section.list {
-    margin-top: 16px;
-    border: 0 none;
-}
-
 article > section.list > div:first-child {
     padding-top: 8px;
+}
+article > section.list > header {
+    margin-bottom: 8px;
 }
 
 /* forms */
@@ -377,6 +375,30 @@ article.tabs {
 article.tabs.active {
     display: block;
     border-bottom: 2px solid #233;
+}
+
+button.main-action {
+    color: white;
+    background: #233;
+}
+
+div#fab {
+    width: 60px; height: 60px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    border-radius: 60px;
+    background-color: #233;
+    font-size: 48px;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.error {
+    color: red;
 }
 
 /* dialog*/
@@ -493,15 +515,6 @@ svg.spinner circle {
 }
 .progress-indeterminate:after {
     animation: stretch 1.4s linear infinite;
-}
-
-button.main-action {
-    color: white;
-    background: #233;
-}
-
-.error {
-    color: red;
 }
 
 @keyframes stretch {
