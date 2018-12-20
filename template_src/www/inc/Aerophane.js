@@ -84,6 +84,26 @@ function Aerophane(mainDeviceReady) {
     }
     this.showDialog = showDialog;
 
+    function closeMenu(e) {
+        var menus = document.querySelectorAll("body > menu"),
+            target = e.target;
+
+        if (target.nodeName !== "LI" && target.parentElement.nodeName != "MENU") {
+            forEachElement(menus, function (menu) {
+                menu.style.display = "none";
+            });
+        }
+    }
+    function createMenu(button) {
+        touchclick(button, function () {
+            var menuId = this.getAttribute("data-menu-id");
+            document.activeElement.blur();
+            document.getElementById(menuId).style.display = "block";
+            document.body.addEventListener("click", closeMenu);
+        });
+    }
+    this.createMenu = createMenu;
+
     function clearDialogs() {
         var mainNav = document.querySelector("nav#main");
         if (mainNav && mainNav.hasAttribute("style")) {

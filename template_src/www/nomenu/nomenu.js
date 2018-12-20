@@ -1,4 +1,4 @@
-var aero = new Aerophane();
+/* globals: aero */
 
 var backButton = document.querySelector("body > header > button:first-child");
 aero.touchclick(backButton, function () {

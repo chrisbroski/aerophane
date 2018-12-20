@@ -35,8 +35,7 @@
 html {
     font-family: sans-serif;
     letter-spacing: 0.02em;
-    background: #f5f5f5;
-    color: #555;
+    color: #233;
 }
 
 body {
@@ -45,7 +44,7 @@ body {
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
-    background: #fff;
+    background: #f8f8f8;
 }
 body.stop-scrolling {
     height: 100%;
@@ -107,11 +106,11 @@ body > header {
     position: fixed;
     overflow: auto;
     left: 0; top: 0; right: 0;
-    background: #f5f5f5;
+    background: #f8f8f8;
     height: 56px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
-    background: #eee;
     color: #333;
+    white-space: nowrap;
     z-index: 1;
 }
 body > header h1 {
@@ -123,10 +122,13 @@ body > header h1 {
 body > header button {
     padding: 12px;
     width: 56px; height: 56px;
-    float: left;
+    float: right;
     background: transparent;
     border: 0 none;
-    color: #fff;
+    color: #333;
+}
+body > header button:first-child {
+    float: left;
 }
 
 article > section {
@@ -142,34 +144,46 @@ article > section:first-child {
 article > section > header {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    background: #666;
 }
+
+article > section > header h2, article > section > header h4, article > section > header h5 {
+    margin: 0; padding: 16px;
+}
+article > section > header h3 {
+    margin: 0; padding: 16px;
+    border-bottom: 2px solid #ddd;
+}
+article > section > header h4 {
+    margin: 0; padding: 16px;
+    background: #233;
+    color: white;
+}
+article > section > header h5 {
+    margin: 0; padding: 16px;
+}
+
 article > section h2, body > div.dialog h2 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 20px;
 }
-article > section > header h2 {
-    margin: 0; padding: 160px 16px 16px;
-    color: #fff;
-}
+
 article > section h3, body > div.dialog h3 {
     margin-left: 18px;
     font-weight: normal;
     font-size: 18px;
 }
-article > section > header h3 {
-    margin: 0; padding: 64px 16px 16px;
-    color: #fff;
-}
+
 article > section h4, body > div.dialog h4 {
     margin-left: 16px;
     font-weight: normal;
     font-size: 18px;
 }
-article > section > header h4 {
-    margin: 0; padding: 16px;
-    color: #fff;
+
+article > section h5, body > div.dialog h5 {
+    margin-left: 16px;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 article > section > footer {
@@ -179,7 +193,7 @@ article > section > footer {
 
 article > footer {
     margin: 8px -8px -56px; padding: 8px;
-    background: #666;
+    background: #233;
     color: #fff;
 }
 
@@ -221,7 +235,7 @@ body > footer {
     position: fixed;
     overflow: auto;
     left: 0; bottom: 0; right: 0;
-    background: #f5f5f5;
+    background: #f8f8f8;
     border-top: 1px solid #ddd;
 }
 body > footer.form {
@@ -250,7 +264,7 @@ article.list > div i, section.list > div i {
     top: 12px; left: 20px;
     line-height: 24px;
     width: 24px; height: 24px;
-    background: #666;
+    background: #233;
     border-radius: 12px;
     color: #fff;
     font-style: normal;
@@ -347,17 +361,22 @@ nav.tabs a {
     padding: 8px 16px;
     display: inline-block;
     text-decoration: none;
-    color: #333;
+    color: #233;
 }
 nav.tabs a:active {
-    background: rgba(0, 0, 221, 0.2);
-    color: #333;
+    background: rgba(0, 0, 0, 0.2);
+    color: #233;
+}
+nav.tabs a.active {
+    border-bottom: 2px solid #233;
+    color: #233;
 }
 article.tabs {
     display: none;
 }
 article.tabs.active {
     display: block;
+    border-bottom: 2px solid #233;
 }
 
 /* dialog*/
@@ -405,13 +424,34 @@ body > div.dialog {
     z-index: 1;
 }
 
+/* Menu */
+body > menu {
+    margin: 0; padding: 8px;
+    display: none;
+    position: absolute;
+    top: 16px; right: 16px;
+    overflow: auto;
+    background: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4);
+    border-radius: 4px;
+    max-height: 240px;
+    width: 120px;
+    z-index: 1;
+}
+body > menu li {
+    margin: 0; padding: 8px;
+    list-style-type: none;
+    font-size: 14px;
+    color: #333;
+}
+
 /* Progress indicators */
 svg.spinner {
     animation: spin 1.4s linear infinite;
 }
 
 svg.spinner circle {
-    stroke: #666;
+    stroke: #233;
     stroke-width: 6;
     stroke-dasharray: 187;
     stroke-dashoffset: 0;
@@ -441,7 +481,7 @@ svg.spinner circle {
 }
 .progress-determinate:after, .progress-indeterminate:after {
     content:"";
-    background: black;
+    background: #233;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -453,6 +493,15 @@ svg.spinner circle {
 }
 .progress-indeterminate:after {
     animation: stretch 1.4s linear infinite;
+}
+
+button.main-action {
+    color: white;
+    background: #233;
+}
+
+.error {
+    color: red;
 }
 
 @keyframes stretch {

@@ -14,7 +14,10 @@
 
 <header>
 <button><span class="material-icons">menu</span></button>
-<h1>Home (H1 body header)</h1>
+<button id="select-style" data-menu-id="style-selector">
+    <span class="material-icons">more_vert</span>
+</button>
+<h1>Tabs</h1>
 </header>
 
 <article class="tabs">
@@ -45,6 +48,11 @@
 <pre>aero.showDialog(<em>element</em>);</pre>
 <p>Touch the background to close.
 </div>
+
+<menu id="style-selector">
+    <li id="style-default">Default
+    <li id="style-blue">Blue
+</menu>
 
 <script type="text/javascript" src="../cordova.js"></script>
 <script type="text/javascript" src="../inc/Aerophane.js"></script>

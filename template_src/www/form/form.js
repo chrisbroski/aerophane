@@ -1,4 +1,5 @@
-var aero = new Aerophane();
+/* globals: aero */
+
 aero.buildNav(menuTitle, menuData);
 
 aero.dialogSelect(document.querySelectorAll("select.aeroSelect"));
