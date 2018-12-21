@@ -86,20 +86,33 @@ function Aerophane(mainDeviceReady) {
 
     function closeMenu(e) {
         var menus = document.querySelectorAll("body > menu"),
-            target = e.target;
+            nodeName = "",
+            parentNodeName = "";
 
-        if (target.nodeName !== "LI" && target.parentElement.nodeName != "MENU") {
+        if (e) {
+            nodeName = e.target.nodeName;
+            if (e.target.parentElement) {
+                parentNodeName = e.target.parentElement.nodeName;
+            }
+        }
+
+        if (nodeName !== "LI" && parentNodeName != "MENU") {
             forEachElement(menus, function (menu) {
                 menu.style.display = "none";
             });
+            document.body.removeEventListener("click", closeMenu);
         }
     }
+    this.closeMenu = closeMenu;
+
     function createMenu(button) {
-        touchclick(button, function () {
+        button.addEventListener("click", function () {
             var menuId = this.getAttribute("data-menu-id");
             document.activeElement.blur();
             document.getElementById(menuId).style.display = "block";
-            document.body.addEventListener("click", closeMenu);
+            window.setTimeout(function () {
+                document.body.addEventListener("click", closeMenu);
+            }, 10);
         });
     }
     this.createMenu = createMenu;

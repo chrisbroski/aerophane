@@ -50,6 +50,11 @@ article > section > header h3 {
     background: white;
 }
 
+article > section > header h4 {
+    color: white;
+    background: #00d;
+}
+
 /* Footer */
 article > footer {
     background: #00d;

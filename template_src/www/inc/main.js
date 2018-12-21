@@ -9,7 +9,13 @@ var menuData = [
 var menuTitle = "Aerophane";
 
 function getStyle(style) {
-    document.querySelectorAll("link")[1].href = "../inc/" + style + ".css";
+    if (style) {
+        window.localStorage.setItem("style", style);
+        document.querySelectorAll("link")[1].href = "../inc/" + style + ".css";
+        aero.closeMenu();
+    } else {
+        document.querySelectorAll("link")[1].href = "../inc/" + window.localStorage.getItem("style") + ".css";
+    }
 }
 
 /* Style menu */
@@ -20,3 +26,5 @@ aero.touchclick(document.querySelector("#style-default"), function () {
 aero.touchclick(document.querySelector("#style-blue"), function () {
     getStyle("blue");
 });
+
+getStyle();
