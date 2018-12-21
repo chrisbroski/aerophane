@@ -1,12 +1,12 @@
 /* Customize here */
 
 a {
-    color: #e09;
+    color: #4c0;
 }
 
 /* Main application header */
 body > header {
-    background: #00d;
+    background: #62e;
     color: #fff;
 }
 body > header button {
@@ -20,22 +20,22 @@ body > header button div {
 
 /* Menu title */
 body > nav#main h2 {
-    color: #00d;
+    color: #62e;
 }
 
 /* Section headers */
 article > section > header {
-    background: #00d;
+    background: #62e;
 }
 
 /* Article h1 - h6 */
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
-    color: #00d;
+    color: #62e;
 }
 
 /* Section h2 - h4 */
 article > section h2, article > section h3, article > section h4 {
-    color: #00d;
+    color: #62e;
 }
 
 /* Section headers */
@@ -50,48 +50,48 @@ article > section > header h2 {
 article > section > header h3 {
     margin: 0; padding: 16px;
     border-bottom: 2px solid rgba(0, 0, 221, 0.4);
-    color: #00d;
+    color: #62e;
     background: white;
 }
 
 article > section > header h4 {
     color: white;
-    background: #00d;
+    background: #62e;
 }
 
 /* Footer */
 article > footer {
-    background: #00d;
+    background: #62e;
 }
 
 /* Dialog h2 - h4 */
 body > div.dialog h2, body > div.dialog h3, body > div.dialog h4 {
-    color: #00d;
+    color: #62e;
 }
 
 /* Tab active */
 nav.tabs a.active {
-    border-bottom: 2px solid #00d;
+    border-bottom: 2px solid #62e;
 }
 
 /* Lists */
 article.list > div i, section.list > div i {
-    background: #e09;
+    background: #4c0;
 }
 
 #fab {
-    background: #e09;
+    background: #4c0;
 }
 
 button.main-action {
     color: white;
-    background: #e09;
+    background: #4c0;
 }
 
 svg.spinner circle {
-    stroke: #e09;
+    stroke: #4c0;
 }
 
 .progress-determinate:after, .progress-indeterminate:after {
-    background: #e09;
+    background: #4c0;
 }

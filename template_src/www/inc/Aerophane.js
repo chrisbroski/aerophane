@@ -69,10 +69,10 @@ function Aerophane(mainDeviceReady) {
     };
     this.classname = classname;
 
-    function querystring(fldNm) {
-        var oRe = new RegExp("[\\?&]"+fldNm+"=([^&#]*)");
-        var fldVal = oRe.exec(parent.location.search);
-        return (fldVal) ? unescape(fldVal[1]) : "";
+    function querystring(key) {
+        var oRe = new RegExp("[\\?&]" + fldNm + "=([^&#]*)");
+        var val = oRe.exec(parent.location.search);
+        return (val) ? unescape(val[1]) : "";
     }
     this.querystring = querystring;
 
@@ -101,6 +101,7 @@ function Aerophane(mainDeviceReady) {
                 menu.style.display = "none";
             });
             document.body.removeEventListener("click", closeMenu);
+            classname.remove(document.body, "stop-scrolling");
         }
     }
     this.closeMenu = closeMenu;
@@ -108,11 +109,15 @@ function Aerophane(mainDeviceReady) {
     function createMenu(button) {
         button.addEventListener("click", function () {
             var menuId = this.getAttribute("data-menu-id");
-            document.activeElement.blur();
-            document.getElementById(menuId).style.display = "block";
-            window.setTimeout(function () {
-                document.body.addEventListener("click", closeMenu);
-            }, 10);
+            var menu = document.getElementById(menuId);
+            if (menu.style.display !== "block") {
+                document.activeElement.blur();
+                menu.style.display = "block";
+                classname.add(document.body, "stop-scrolling");
+                window.setTimeout(function () {
+                    document.body.addEventListener("click", closeMenu);
+                }, 10);
+            }
         });
     }
     this.createMenu = createMenu;
