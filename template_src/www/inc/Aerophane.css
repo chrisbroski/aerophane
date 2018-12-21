@@ -406,7 +406,7 @@ button#fab {
     margin: 0; padding: 12px;
     font-size: 20px;
     border: 0 none;
-    border-radius: 12px;
+    border-radius: 4px;
 }
 button#fab a {
     text-decoration: none;
