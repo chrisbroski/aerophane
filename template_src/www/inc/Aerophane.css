@@ -563,7 +563,7 @@ svg.spinner circle {
         padding-left: 16px;
         left: 240px;
     }
-    body > header button {
+    body > header button:first-child {
         display: none;
     }
     body > nav#main {
