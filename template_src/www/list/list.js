@@ -1,6 +1,6 @@
 /* globals: aero */
 
-aero.buildNav(menuTitle, menuData);
+aero.includeNav("../inc/main-nav.pht");
 
 aero.touchclick(document.querySelector("div#fab"), function () {
     var div = document.createElement("div");
@@ -14,8 +14,3 @@ aero.touchclick(document.querySelector("div#fab"), function () {
     div.appendChild(title);
     document.querySelector("section").appendChild(div);
 });
-
-/*<div>
-<i>2</i>
-<h3>Next Thing h3</h3>
-</div> */

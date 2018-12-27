@@ -1,5 +1,5 @@
 /* globals: aero */
 
-aero.buildNav(menuTitle, menuData);
+aero.includeNav("../inc/main-nav.pht");
 
 aero.tab.init();

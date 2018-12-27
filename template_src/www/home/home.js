@@ -1,6 +1,6 @@
 /* globals: aero */
 
-aero.buildNav(menuTitle, menuData);
+aero.includeNav("../inc/main-nav.pht");
 
 aero.touchclick(document.getElementById("exampleDialog"), function () {
     "use strict";

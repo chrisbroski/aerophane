@@ -146,46 +146,52 @@ function Aerophane(mainDeviceReady) {
         touchclick(navMatte, clearDialogs);
     }
 
-    function buildNav(mainMenuTitle, mainMenuData) {
-        var navButton, navNav, navH2, navP, navA;
-
-        mainMenuTitle = mainMenuTitle || "Aerophane";
-        if (!mainMenuData) {
-            classname.add(document.body, "nomenu");
-            return false;
+    function showNav(nav) {
+        var mainNav = document.querySelector("body > nav#main");
+        if (mainNav.style.width === "240px") {
+            clearDialogs();
+        } else {
+            mainNav.style.width = "240px";
+            document.getElementById("matte").style.display = "block";
+            manipulateClassNames("add", document.body, "stop-scrolling");
         }
+    }
+    this.showNav = showNav;
 
-        navButton = document.querySelector("body > header button:first-child");
-
-        navNav = document.createElement("nav");
-        navNav.id = "main";
-        navH2 = document.createElement("h2");
-        navH2.textContent = mainMenuTitle;
-        navNav.appendChild(navH2);
-
-        mainMenuData.forEach(function (item) {
-            navP = document.createElement("p");
-            navA = document.createElement("a");
-            navA.textContent = item.name;
-            navA.href = item.href;
-            navP.appendChild(navA);
-            navNav.appendChild(navP);
-        });
-
-        document.body.appendChild(navNav);
-
-        touchclick(navButton, function () {
-            var mainNav = document.querySelector("body > nav#main");
-            if (mainNav.style.width === "240px") {
-                clearDialogs();
-            } else {
-                mainNav.style.width = "240px";
-                document.getElementById("matte").style.display = "block";
-                manipulateClassNames("add", document.body, "stop-scrolling");
-            }
+    function initNav(button) {
+        button = button || document.querySelector("body > header > button:first-child");
+        touchclick(button, function () {
+            showNav();
         });
     }
-    this.buildNav = buildNav;
+    this.initNav = initNav;
+
+    function include(el, path, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", path);
+        xhr.onload = function () {
+            el.innerHTML = this.responseText;
+            if (callback) {
+                callback();
+            }
+        };
+        xhr.send();
+    }
+    this.include = include;
+
+    function includeNav(navFile) {
+        var mainNav = document.createElement("nav");
+        mainNav.id = "main";
+        mainNav.style.width = "0";
+        document.body.appendChild(mainNav);
+        include(mainNav, navFile, function () {
+            initNav();
+            window.setTimeout(function () {
+                mainNav.removeAttribute("style");
+            }, 10);
+        });
+    }
+    this.includeNav = includeNav;
 
     function dialogSelect(selects) {
         if (!selects) {
