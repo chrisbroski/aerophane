@@ -1,7 +1,7 @@
 function Aerophane(mainDeviceReady) {
     "use strict";
 
-    var pageDeviceReady, isDeviceReady = false, classname;
+    var pageDeviceReady, isDeviceReady = false, classname, menuWidth = '240px';
 
     function isTouch() {
         return ("ontouchstart" in window || "onmsgesturechange" in window);
@@ -70,7 +70,7 @@ function Aerophane(mainDeviceReady) {
     this.classname = classname;
 
     function querystring(key) {
-        var oRe = new RegExp("[\\?&]" + fldNm + "=([^&#]*)");
+        var oRe = new RegExp("[\\?&]" + key + "=([^&#]*)");
         var val = oRe.exec(parent.location.search);
         return (val) ? unescape(val[1]) : "";
     }
@@ -148,10 +148,10 @@ function Aerophane(mainDeviceReady) {
 
     function showNav(nav) {
         var mainNav = document.querySelector("body > nav#main");
-        if (mainNav.style.width === "240px") {
+        if (mainNav.style.width === menuWidth) {
             clearDialogs();
         } else {
-            mainNav.style.width = "240px";
+            mainNav.style.width = menuWidth;
             document.getElementById("matte").style.display = "block";
             manipulateClassNames("add", document.body, "stop-scrolling");
         }
